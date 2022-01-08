@@ -20,7 +20,7 @@ public:
                         }
                     }
                     //Robo collision condition
-                    if (c1 == c2) dp[row][c1][c1] = prevMax + grid[row][c1];
+                    if (c1 == c2) dp[row][c1][c2] = prevMax + grid[row][c1];
                     else dp[row][c1][c2] = prevMax + grid[row][c1] + grid[row][c2];
                 }
             }
