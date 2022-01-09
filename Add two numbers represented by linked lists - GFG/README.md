@@ -1,5 +1,5 @@
 # Add two numbers represented by linked lists
-##  Easy 
+## Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Given two numbers represented by two linked lists of size <strong>N</strong> and <strong>M</strong>. The task is to return a sum list. </span></p>
 
