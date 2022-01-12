@@ -140,13 +140,13 @@ void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
 
     root = temp;
 
-    if(root->right)
-    {
-    root = root->right;
-    while(root->left)
-        root = root->left;
-    suc = root;
-    }
+        if(root->right)
+        {
+        root = root->right;
+        while(root->left)
+            root = root->left;
+        suc = root;
+        }
 }
 
 }
