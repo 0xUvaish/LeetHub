@@ -109,7 +109,7 @@ void InOrder(Node *root, int k, int &index, int &res)
     int KthSmallestElement(Node *root, int K)
     {
        int index = 1;
-        int res = -1;
+       int res = -1;
     InOrder(root, K, index, res);
     return res;
     }
