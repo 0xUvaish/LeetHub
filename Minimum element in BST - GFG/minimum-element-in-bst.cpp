@@ -96,15 +96,11 @@ int main() {
 int minValue(Node* root) {
     if(!root)
         return -1;
-    int a,b;
+    int a;
     
     while(root->left)
         root = root->left;
     a = root->data;
-    
-    while(root->right)
-        root = root->right;
-    b = root->data;
     
     return a;
 }
