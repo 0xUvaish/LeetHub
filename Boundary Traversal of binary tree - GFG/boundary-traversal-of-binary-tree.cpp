@@ -169,8 +169,6 @@ void left_boundary(Node *root,vector <int>&ans)
        right_boundary(root->right,right);
        
        vector <int> leaf;
-    //   leaf_nodes(root->left,leaf);
-    //   leaf_nodes(root->right,leaf);
        leaf_nodes(root,leaf);
        
        vector <int> ans;
@@ -178,10 +176,8 @@ void left_boundary(Node *root,vector <int>&ans)
        
        for(auto it:left)
            ans.push_back(it);
-       
        for(auto it:leaf)
            ans.push_back(it);
-       
        for(auto it:right)
            ans.push_back(it);
        
