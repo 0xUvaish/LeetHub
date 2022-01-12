@@ -15,7 +15,7 @@ class Solution
                 for(int i=l;i<=r;i++)
                 {
                     swap(s[l], s[i]); 
-                    permute(s, l+1, r, ans) ; 
+                    permute(s, l+1, r, ans); 
                     swap(s[l], s[i]); 
                 }
            }
