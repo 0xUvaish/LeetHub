@@ -127,12 +127,12 @@ class Solution{
    if(root->data == k)
     return dist;
 
-   int left = find_Dist(root->left , k, dist+1) ;
+   int left = find_Dist(root->left, k, dist+1);
 
    if(left!=-1)
       return left;
 
-   return find_Dist(root->right , k , dist+1);
+   return find_Dist(root->right, k, dist+1);
 
  }
  
@@ -144,10 +144,10 @@ class Solution{
    int findDist(Node* root, int n1, int n2) 
    {
 
-       Node * lca = LCA( root , n1  , n2);
+       Node *lca = LCA(root, n1, n2);
     
-       int d1 = find_Dist(lca , n1 , 0); 
-       int d2 = find_Dist(lca , n2 , 0);
+       int d1 = find_Dist(lca, n1, 0); 
+       int d2 = find_Dist(lca, n2, 0);
     
        return d1 + d2;
 
