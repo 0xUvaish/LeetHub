@@ -26,7 +26,6 @@ int main(){
 	}
 }// } Driver Code Ends
 
-
 void push(stack<int>& s, int a){
 	s.push(a);
 }
@@ -40,18 +39,27 @@ bool isEmpty(stack<int>& s){
 }
 
 int pop(stack<int>& s){
-	int x = s.top();
-	s.pop();
-	return x;
+	if(!s.empty())
+	{
+	    int k = s.top(); 
+	    s.pop(); 
+	    
+	    return k;
+	    
+	}
+	return -1;
 }
 
-int getMin(stack<int>& s){
-	int m = 10000;
-    while(!s.empty())
-    {
-    int x = s.top();
-        s.pop();
-    m = min(m, x);
-    }
-return m;
+int getMin(stack<int>& s)
+{
+	int top = s.top();
+	int mini = s.top();
+	if(s.size()>1)
+	{
+	    s.pop();
+	    mini = min(mini, getMin(s));
+	}
+	s.push(top);
+	
+	return mini;
 }
