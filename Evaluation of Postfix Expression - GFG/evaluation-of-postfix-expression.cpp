@@ -26,11 +26,11 @@ class Solution
                 s.pop();
                 
                 if(S[i] == '*')
-                    s.push(n1*n2);
+                    s.push(n2*n1);
                 else if(S[i] == '/')
                     s.push(n2/n1);
                 else if(S[i] == '+')
-                    s.push(n1+n2);
+                    s.push(n2+n1);
                 else if(S[i] == '-')
                     s.push(n2-n1);
             }
