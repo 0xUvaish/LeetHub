@@ -1,5 +1,5 @@
 # Special Stack
-##  Easy 
+## Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">Design a data-structure<strong> SpecialStack&nbsp;</strong>that supports all the stack operations like <strong>push()</strong>, <strong>pop()</strong>,<strong> isEmpty()</strong>, <strong>isFull()</strong> and an additional operation <strong>getMin()</strong> which should return <strong>minimum </strong>element from the SpecialStack. Your task is to <strong>complete all the functions</strong>, using stack data-Structure.</span></p>
 
