@@ -1,5 +1,6 @@
 class Solution {
 public:
+    
 int minCharacters(string str1, string str2)
 {
     int l1 = (int) str1.length(), l2 = (int) str2.length();
@@ -29,4 +30,5 @@ int minCharacters(string str1, string str2)
     }
     return ans;
 }
+    
 };
