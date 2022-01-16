@@ -15,8 +15,9 @@ public:
             else if(temp!=INT_MAX)
                 lseats[i] = i-temp; 
         } 
-        cout<<endl;
+        
         temp = INT_MAX;
+        
         for(int i=n-1;i>=0;i--)
         {
             if(seats[i]==1)
@@ -27,18 +28,11 @@ public:
             else if(temp!=INT_MAX)
                 rseats[i] = temp-i; 
                 
-            cout<<rseats[i]<<" ";
+            
             maxi = min(lseats[i],rseats[i]);
             ans = max(ans, maxi);
         } 
-        
-        // for(int i =0;i<n;i++)
-        // {
-        //     maxi = min(lseats[i],rseats[i]);
-        //     ans = max(ans, maxi);
-        // }
-        
-        
+             
 return ans;
     }
 };
