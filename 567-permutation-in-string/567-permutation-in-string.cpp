@@ -1,22 +1,24 @@
 class Solution {
 public:
-    bool checkInclusion(string s1, string s2) {
-       int n = s1.size(),m = s2.size();
-		map<char,int> m1;
+    bool checkInclusion(string s1, string s2) 
+    {                
+        string m1(26,0), m2(26,0);
+        int l1 = s1.size(),l2=s2.size();
         
-		for(int i=0;i<n;i++)
-            m1[s1[i]]++;
+        for( auto ch : s1) 
+            m1[ch-'a']++; 
         
-		for(int i=0;i<=m-n;i++)
+        for( int r = 0 ; r < l2 ; r++)
         {
-			map<char,int> m2;
-			for(int j=i;j<i+n;j++)
-                m2[s2[j]]++;
+            m2[s2[r]-'a']++;
             
-			if(m1==m2)
+            if(r>=l1)
+                m2[s2[r-l1] - 'a']--;
+            
+            if(m2==m1)
                 return true;
-		}
+        }   
         
-	return false; 
+        return false;
     }
 };
