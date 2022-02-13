@@ -20,8 +20,8 @@ public:
 
 		currSubset.push_back(currVal);
 		generateSubsets(nums, currIndex+1, currSubset, powerSet);
-
 		currSubset.pop_back();
+        
 		generateSubsets(nums, currIndex+1, currSubset, powerSet);
 
 		return;
