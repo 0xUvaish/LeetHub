@@ -24,8 +24,10 @@ public:
      void dfs(Node* curr,Node* start, unordered_map<int,Node*> &s){
         start->val = curr->val;
         s[start->val] = start;
-        for(int i=0;i<curr->neighbors.size();i++){
-            if(s.find(curr->neighbors[i]->val) == s.end()){
+        for(int i=0;i<curr->neighbors.size();i++)
+        {
+            if(s.find(curr->neighbors[i]->val) == s.end())
+            {
                 Node* next = new Node();
                 dfs(curr->neighbors[i],next,s);
             }
@@ -34,7 +36,8 @@ public:
         return;
     }
     Node* cloneGraph(Node* node) {
-        if(!node) return NULL;
+        if(!node) 
+            return NULL;
         Node* start = new Node();
         unordered_map<int,Node*> s;
         dfs(node,start,s);
