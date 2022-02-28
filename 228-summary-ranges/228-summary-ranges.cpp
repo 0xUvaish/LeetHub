@@ -22,6 +22,7 @@ public:
                 flag = i;
             }
         }
+        
     if(n-flag==1)
         a = to_string(nums[flag]);
     else
