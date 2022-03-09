@@ -13,17 +13,21 @@ public:
     ListNode* deleteDuplicates(ListNode* head) 
     {
         
-        if (!head or !(head -> next)) 
+        if (!head || !(head -> next)) 
             return head;
         
-        ListNode*curr = head, *next = head, *dummy = new ListNode(0), *last = dummy;
+        ListNode *curr = head;
+        ListNode *next = head;
+        ListNode *dummy = new ListNode(0);
+        ListNode *last = dummy;
         
-        while (curr) 
+        while(curr) 
         {
             next = curr -> next;
             while (next and curr -> val == next -> val)
                 next = next -> next;
-            if (curr -> next == next) 
+            
+            if (curr -> next == next) //to check whether we found any duplicate or not
             {
                 last -> next = curr;
                 last = last -> next;
