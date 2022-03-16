@@ -5,6 +5,7 @@ public:
     {
         while(un[a]!=-1)
             a=un[a];
+       
        return a;  
     }
     
