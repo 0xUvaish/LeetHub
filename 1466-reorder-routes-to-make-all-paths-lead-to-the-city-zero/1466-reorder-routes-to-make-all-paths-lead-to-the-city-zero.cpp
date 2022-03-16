@@ -8,7 +8,7 @@ class Solution {
         for(int child: adj[src])
         {
             if(child != p)
-                changes += minChanges(child, adj, revAdj, src) + 1;
+                changes += minChanges(child, adj, revAdj, src) + 1; // only diff (forward edge)
         }
         
         for(int child: revAdj[src]) 
