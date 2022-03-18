@@ -14,7 +14,7 @@ public:
             s.push(num[i]);
         }
         
-        while(k>0)
+        while(k>0) //If all are in increasing order, then remove from the end
         {
             s.pop();
             k--;
