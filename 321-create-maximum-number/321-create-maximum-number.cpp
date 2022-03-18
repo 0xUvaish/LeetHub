@@ -34,7 +34,8 @@ public:
         vector<int> ans;
         int n = nums1.size();
         int m = nums2.size();
-        for(int i=max(0,k-m);i<=min(k,n);i++)
+        
+        for(int i=max(0,k-m);i<=min(k,n);i++) //carryout all possibilities of decreasing vectors
             ans = max(ans,maxCombo(maxelement(nums1,i,n),maxelement(nums2,k-i,m)));
         
         return ans;
