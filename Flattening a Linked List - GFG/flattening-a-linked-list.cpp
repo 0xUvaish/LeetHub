@@ -113,11 +113,6 @@ struct Node{
 Node *mergeList(Node *a, Node *b)
 {
     
-    if(!a)
-        return b;
-    else if(!b)
-        return a;
-    
     Node *dummy = new Node(0);
     Node *tmp = dummy;
     
