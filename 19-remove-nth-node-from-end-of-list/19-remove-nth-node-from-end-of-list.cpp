@@ -29,11 +29,14 @@ public:
         temp = head;
         m -= n;
         
-        for(int i=0;i<m;i++){
+        for(int i=0;i<m;i++)
+        {
             temp2 = temp;
             temp = temp->next;
         }
+        ListNode* del = temp;
         temp2->next = temp->next;
+        delete(del);
         return head; 
     }
 };
