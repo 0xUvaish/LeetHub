@@ -21,6 +21,7 @@ public:
                l++;
                q=q->next;
            }
+        
         q->next=head;
         k%=l;
         k=l-k;
