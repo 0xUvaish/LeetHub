@@ -15,7 +15,8 @@ public:
             else if(nums[i]==res2)
                 cnt2++;
             
-            else{
+            else
+            {
                 if(cnt1==0)
                 {
                     res1=nums[i];
