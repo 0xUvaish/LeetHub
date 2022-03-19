@@ -3,9 +3,11 @@ public:
     map<int,int> freqMap;
     map<int,stack<int>> setMap;
     
-    int maxfreq = 0;
+    int maxfreq;
     
-    FreqStack() {
+    FreqStack() 
+    {
+       maxfreq=0; 
     }
     
     void push(int val) 
