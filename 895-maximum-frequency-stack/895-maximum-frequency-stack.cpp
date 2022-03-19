@@ -28,10 +28,10 @@ public:
         int top = setMap[maxfreq].top();
         setMap[maxfreq].pop();
         
-        --freqMap[top];
+        freqMap[top]--;
 
         if(setMap[maxfreq].size() == 0)
-            --maxfreq;
+            maxfreq--;
         
         return top;
     }
