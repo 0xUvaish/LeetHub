@@ -11,9 +11,8 @@ public:
     void push(int val) 
     {
 
-        int freq = freqMap[val] + 1;
-
-        freqMap[val] = freq;
+        freqMap[val]++;
+        int freq = freqMap[val];
 
         if(freq > maxfreq)
             maxfreq = freq;
