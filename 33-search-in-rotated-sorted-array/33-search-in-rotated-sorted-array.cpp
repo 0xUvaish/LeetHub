@@ -9,10 +9,11 @@ public:
       while(low<=high)
       {
           int mid=low+(high-low)/2;
+          
           if(nums[mid]==target)
               return mid;
 
-          //if left part is sorted 
+          //if we're in left part
           if(nums[low]<=nums[mid])
           {
               if(target>=nums[low] && target<=nums[mid] )
@@ -21,7 +22,7 @@ public:
                   low=mid+1;
           }
 
-          // if right part is sorted
+          // if we're in right part
           else
           {
                 if(target>=nums[mid] && target<=nums[high] )
