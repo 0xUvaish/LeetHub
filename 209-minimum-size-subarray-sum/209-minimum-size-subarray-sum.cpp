@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minSubArrayLen(int k, vector<int>& nums) {
-        
+        //O(N)
         int sum = 0, mn = INT_MAX;
         int i = 0;
         
@@ -19,4 +19,6 @@ public:
         }
         return mn == INT_MAX ? 0 : mn;
     }
+    
+    //Binary Search on answer will be O(nlogn)
 };
