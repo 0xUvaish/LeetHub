@@ -13,7 +13,7 @@ public:
                     flagr=1;
                 if(j==0 && matrix[i][j]==0)
                     flagc=1;
-                if(i>=1 && j>=0 && matrix[i][j]==0)
+                if(i>=1 && j>=1 && matrix[i][j]==0)
                 {
                     matrix[i][0]=0;
                     matrix[0][j]=0;
