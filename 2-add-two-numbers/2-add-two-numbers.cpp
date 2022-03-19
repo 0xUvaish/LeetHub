@@ -10,20 +10,33 @@
  */
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2, int carry = 0)
-    {
-        if(!l1 and !l2)
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+{
+        ListNode* ans = new ListNode(0);
+        ListNode* dummy = ans;
+        
+        int carry = 0;
+        while(l1 || l2)
         {
-            if(carry > 0)
-                return new ListNode(carry);
+            int first = (l1) ? l1->val : 0;
+            int second = (l2) ? l2->val : 0;
+            int total = first + second + carry;
+            carry = total/10;
+            int add = total%10;
+
+            dummy->next = new ListNode(add);
             
-            return nullptr;
+            if(l1)
+                l1 = l1->next;
+            if(l2)
+                l2 = l2->next;
+            
+            dummy = dummy->next;
         }
-        int op1 = l1 ? l1->val : 0;
-        int op2 = l2 ? l2->val : 0;
-        int sum = op1 + op2 + carry;
-        ListNode* res = new ListNode(sum%10);
-        res->next = addTwoNumbers(l1 ? l1->next : nullptr,l2 ? l2->next : nullptr,sum/10);
-        return res;
+    
+        if(carry == 1) 
+            dummy->next = new ListNode(carry);
+    
+        return ans->next;
     }
 };
