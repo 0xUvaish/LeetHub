@@ -37,6 +37,7 @@ public:
         ListNode* del = temp;
         temp2->next = temp->next;
         delete(del);
+        
         return head; 
     }
 };
