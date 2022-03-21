@@ -4,11 +4,9 @@ public:
         int n = s.length();
         vector<int> right(26,-1);
 
-        for(int i = n-1; i >=0 ; i--)
-        {
+        for(int i = n-1; i >=0 ; i--)  //Last occurence index of every character
             if(right[s[i]-'a'] < 0)
                 right[s[i]-'a'] = i;
-        }
          
 		
         vector<int> ans;
