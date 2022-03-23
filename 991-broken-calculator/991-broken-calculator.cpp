@@ -13,7 +13,7 @@ public:
             
             else
             {
-                ans += abs(tar-startValue)-1;
+                ans += (startValue-tar)-1;
                 tar = startValue;
             }
             
