@@ -10,43 +10,39 @@ using namespace std;
 
 class Solution{
     public:
-    
-    vector<string>ans;
-    vector<vector<int>>util={{0,1},{1,0},{0,-1},{-1,0}};
-    
-    char direction(int i,int j){
-    if(i==1 && j==0)return 'D';
-    if(i==0 && j==1)return 'R';
-    if(i==-1 && j==0)return 'U';
-    if(i==0 && j==-1)return 'L';
-}
-void solve(vector<vector<int>> &grid,int i,int j,int n,string out)
-{
-    if(i<0 || j<0 || i>=n || j>=n || grid[i][j]!=1)
-        return;
-        
-    if(i==n-1 && j==n-1)
+    vector<string> ans;
+    int di[4] = {1, 0, 0, -1};
+    int dj[4] = {0, -1, 1, 0};
+    void solve(vector<vector<int>> &m, int n, vector<vector<bool>> &visited, int row, int col, string asf)
     {
-        ans.push_back(out);
-        return;
+        if(row==n-1 && col==n-1)
+            {
+                ans.push_back(asf);
+                return;
+            }
+            
+        string dir="DLRU";
+        for(int ind=0;ind<4;ind++)
+        {
+            int nexti = row+di[ind];
+            int nextj = col+dj[ind];
+            
+            if(nexti>=0 && nexti<n && nextj>=0 && nextj<n && !visited[nexti][nextj] && m[nexti][nextj])
+            {
+                visited[nexti][nextj]=true;
+                solve(m,n,visited,nexti,nextj,asf+dir[ind]);
+                visited[nexti][nextj]=false;
+            }
+        }
     }
     
-    grid[i][j]=2;
-    for(int k=0;k<4;k++){
-        int x=i+util[k][0];
-        int y=j+util[k][1];
-        out.push_back(direction(util[k][0],util[k][1]));
-        solve(grid,x,y,n,out);
-        out.pop_back();
-    }
-    grid[i][j]=1;
-}
-
-    vector<string> findPath(vector<vector<int>> &m, int n) 
-    {
-        
-    solve(m,0,0,n,"");
-    sort(ans.begin(),ans.end());
+    vector<string> findPath(vector<vector<int>> &m, int n) {
+        vector<vector<bool>> visited(n, vector<bool> (n, false));
+        if(!m[0][0])
+            return ans;
+        string temp="";
+        visited[0][0]=true;
+        solve(m,n,visited,0,0,temp);
     return ans;
     }
 };
