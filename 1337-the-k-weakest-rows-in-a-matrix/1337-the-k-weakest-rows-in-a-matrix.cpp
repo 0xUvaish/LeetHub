@@ -17,12 +17,19 @@ bool static comp(pair<int, int> &A, pair<int, int> &B)
         for(int i=0;i<m;i++)
         {
             int count=0;
-            for(int j=0;j<n;j++)
+            int low =0, high = n-1, tans=n;
+            while(low<=high)
             {
-                if(mat[i][j]==1)
-                    count++;
+               int mid = low + (high-low)/2;
+                if(mat[i][mid] ==0)
+                {
+                    high = mid-1;
+                    tans = mid;
+                }
+                else
+                    low = mid + 1;
             }
-            help.push_back({count, i});
+            help.push_back({tans-1, i});
         }
         
         sort(help.begin(), help.end());
