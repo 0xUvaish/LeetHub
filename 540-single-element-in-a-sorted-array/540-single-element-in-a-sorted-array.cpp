@@ -1,22 +1,17 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        if(nums.size()==1)
-            return nums[0];
+        int n = nums.size();
+        int low = 0, high = n-2;
         
-        int l=0, r=nums.size()-1, mid, mid2;
-        
-        while(l < r)
+        while(low <= high)
         {
-            mid = l+(r-l)/2;
-            
-            mid2 = (mid%2 == 0) ? mid+1 : mid-1;
-            
-            if(nums[mid]==nums[mid2])
-                l = mid+1;
-            
-            else r = mid;
+            int mid = (low+high)/2;
+            if(nums[mid] == nums[mid^1])
+                low = mid+1;
+            else
+                high = mid-1;
         }
-        return nums[l];
+        return nums[low];
     }
 };
