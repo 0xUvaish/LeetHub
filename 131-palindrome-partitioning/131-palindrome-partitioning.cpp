@@ -24,9 +24,11 @@ bool check(string s , int l ,int r)
         {
             if(check(s,l,i))
             {
-              vector<string> dup = temp;
-                dup.push_back(s.substr(l,i-l+1));
-                helper(s,i+1,r,dup,ans);
+              // vector<string> dup = temp;
+                // dup.push_back(s.substr(l,i-l+1));
+                temp.push_back(s.substr(l,i-l+1));
+                helper(s,i+1,r,temp,ans);
+                temp.pop_back();
             }
             
         }
