@@ -17,6 +17,7 @@ class Solution
         sort(v.begin(), v.end());
         int count = 1;
         int currend = v[0].first;
+        
         int i = 1;
         while (i < n) 
         {
