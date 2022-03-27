@@ -4,21 +4,6 @@ public:
     int n = nums1.size(), m = nums2.size();
         if(n>m)
         return findMedianSortedArrays(nums2, nums1);   
-//     if(n==0)
-//     {
-//             if(m==0)
-//             {
-//                 return 0.0;
-//             }
-//             else if(m%2==1) 
-//                 return double(nums2[m/2]);
-        
-//             else
-//             {
-//                 double ans = (nums2[m/2] + nums2[m/2-1])/2.0;
-//                 return ans;
-//             }
-//         } 
         
     int low=0;
     int high=n;
