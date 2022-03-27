@@ -15,7 +15,7 @@ public:
         for(int i=idx;i<candidates.size();i++)
         {
                 temp.push_back(candidates[i]);
-                solve(candidates, target, sum+candidates[i], temp, i);
+                solve(candidates, target, sum+candidates[i], temp, i); //index i (not i+1) because we can take more than once
                 temp.pop_back();
         }
          return;
