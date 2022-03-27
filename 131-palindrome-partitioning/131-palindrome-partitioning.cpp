@@ -20,12 +20,10 @@ bool check(string s , int l ,int r)
 			return;
         }
         
-        for(int i = l;i<=r;i++)
+        for(int i=l;i<=r;i++)
         {
             if(check(s,l,i))
             {
-              // vector<string> dup = temp;
-                // dup.push_back(s.substr(l,i-l+1));
                 temp.push_back(s.substr(l,i-l+1));
                 helper(s,i+1,r,temp,ans);
                 temp.pop_back();
@@ -39,7 +37,8 @@ bool check(string s , int l ,int r)
     vector<vector<string>> partition(string s)
     {
         vector<vector<string>> ans;
-        helper(s,0,s.size()-1,{},ans);
+        vector<string> temp;
+        helper(s,0,s.size()-1,temp,ans);
         return ans;
         
     }
