@@ -52,11 +52,11 @@ vector<vector<string>> ans;
         string s="";
         for(int i=0;i<n;i++)
             s+=".";
-        // for(int i=0;i<n;i++)
-        //     v.push_back(s);
+        
         vector<string> v(n, s);
-        int i=0;
-        nqueen(v,i,n);
+
+        nqueen(v,0,n);
+        
         return ans;
     }
 };
