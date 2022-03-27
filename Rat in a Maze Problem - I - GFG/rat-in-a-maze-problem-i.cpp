@@ -13,6 +13,14 @@ class Solution{
     vector<string> ans;
     int di[4] = {1, 0, 0, -1};
     int dj[4] = {0, -1, 1, 0};
+    
+    bool isSafe(int nexti, int nextj, int n, vector<vector<bool>> &visited, vector<vector<int>> &m)
+    {
+        if(nexti>=0 && nexti<n && nextj>=0 && nextj<n && !visited[nexti][nextj] && m[nexti][nextj])
+        return true;
+    
+        return false;
+    }
     void solve(vector<vector<int>> &m, int n, vector<vector<bool>> &visited, int row, int col, string asf)
     {
         if(row==n-1 && col==n-1)
@@ -27,7 +35,7 @@ class Solution{
             int nexti = row+di[ind];
             int nextj = col+dj[ind];
             
-            if(nexti>=0 && nexti<n && nextj>=0 && nextj<n && !visited[nexti][nextj] && m[nexti][nextj])
+            if(isSafe(nexti, nextj, n, visited, m))
             {
                 visited[nexti][nextj]=true;
                 solve(m,n,visited,nexti,nextj,asf+dir[ind]);
