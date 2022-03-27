@@ -43,7 +43,8 @@ class Solution
                 W -= arr[i].weight; 
             }
             
-            else{
+            else
+            {
                 double priceperWt = (double) arr[i].value/arr[i].weight;
                 fVal += priceperWt * W;
                 break;
