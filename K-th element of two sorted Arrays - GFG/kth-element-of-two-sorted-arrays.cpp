@@ -8,6 +8,7 @@ class Solution{
     public:
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
+        // O(n+m) Approach 
         // int temp;
         // int i=0,j=0,count=0;
         // while(i<n && j<m)
@@ -49,6 +50,9 @@ class Solution{
         //     }
         // }
     
+    
+    
+    //O(log(min(m,n))) approach
     if(n>m)
         return kthElement(arr2, arr1, m, n, k);
         
