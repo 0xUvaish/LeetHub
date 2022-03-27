@@ -2,20 +2,25 @@ class Solution {
 public:
 vector<vector<string>> ans;
     bool issafe(vector<string> &v,int i,int j){
+        
         int x=i-1;
-        while(x>=0){
+        while(x>=0)
+        {
             if(v[x][j]=='Q')
                 return false;
             x--;
         }
+        
         x=i-1;
         int y=j-1;
-        while(x>=0 && y>=0){
+        while(x>=0 && y>=0)
+        {
             if(v[x][y]=='Q')
                 return false;
             x--;
             y--;
         }
+        
         x=i-1;
         y=j+1;
         while(x>=0 && y<v.size()){
@@ -24,6 +29,7 @@ vector<vector<string>> ans;
             x--;
             y++;
         }
+        
         return true;
             
     }
