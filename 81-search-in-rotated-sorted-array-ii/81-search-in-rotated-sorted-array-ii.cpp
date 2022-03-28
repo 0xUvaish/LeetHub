@@ -11,7 +11,7 @@ public:
             if(nums[m] == X) 
                 return true;
             
-            else if(nums[l] == nums[m] && nums[r] == nums[m]) 
+            else if(nums[l] == nums[m] && nums[r] == nums[m]) //Additional case for duplicates
                 l++, r--;
             
             else if(nums[l] <= nums[m])
