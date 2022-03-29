@@ -12,13 +12,14 @@ public:
         }
     }
     string longestPalindrome(string s) {
+        
         int maxLen=1;
         int index=0;
-        int left,right;
         
-        for(int i=0;i<s.length();i++){
-            checkPalindrome(s,i,i,maxLen,index);
-            checkPalindrome(s,i,i+1,maxLen,index);
+        for(int i=0;i<s.length();i++)
+        {
+            checkPalindrome(s,i,i,maxLen,index);  //odd length - single middle
+            checkPalindrome(s,i,i+1,maxLen,index); //even length - double middle
         }
        
         return s.substr(index,maxLen);
