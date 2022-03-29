@@ -6,16 +6,16 @@ public:
         s+="+";
         
         stack<int> stack;
-        int currNumber  = 0;
-        char sign = '+';
+        int currNumber=0;
+        char sign ='+';
         
         for( int i = 0 ; i < s.length() ; i++ )
         {
-            if( s[i] == ' ' )
+            if(s[i]==' ')
                 continue;
             
-            else if( s[i] >= '0' )
-                currNumber = currNumber*10 + ( s[i] - 48 );
+            else if(s[i]>='0')
+                currNumber = currNumber*10 + (s[i] - 48);
             
             else 
             {
