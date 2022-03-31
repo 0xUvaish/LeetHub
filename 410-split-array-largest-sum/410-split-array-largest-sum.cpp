@@ -17,9 +17,10 @@ public:
     }
     
     
-    int splitArray(vector<int>& nums, int m) {
+    int splitArray(vector<int>& nums, int m) 
+    {
         int low = *max_element(nums.begin(), nums.end());
-        int sum =0, ans;
+        int sum, ans;
         
         for(auto x: nums)
             sum += x;
