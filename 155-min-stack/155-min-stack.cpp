@@ -1,31 +1,71 @@
 class MinStack {
     
-private:
-    stack<pair<int, int>> s;
-    int curr_min = INT_MAX;
+// private:
+//     stack<pair<int, int>> s;
+//     int curr_min = INT_MAX;
+    
+// public:
+//     MinStack() {}
+    
+//     void push(int val) {
+//         if (val < curr_min) {
+//             s.push({val, val});
+//             curr_min = val;
+//         }
+//         else s.push({val, curr_min});
+//     }
+    
+//     void pop() {
+//         s.pop();
+//         curr_min = s.empty() ? INT_MAX : s.top().second;
+//     }
+    
+//     int top() {
+//         return s.top().first;
+//     }
+    
+//     int getMin() {
+//         return curr_min;
+//     }
     
 public:
-    MinStack() {}
+    long mn;
+    stack<long> s;
+    
+    MinStack() {
+    }
     
     void push(int val) {
-        if (val < curr_min) {
-            s.push({val, val});
-            curr_min = val;
+        if(s.empty())
+        {
+            mn=val;
+            s.push(val);
         }
-        else s.push({val, curr_min});
+        else if(val>mn)
+            s.push(val);
+        else
+        {
+            s.push((long)2*val-mn);
+            mn=val;
+        }  
     }
     
     void pop() {
+        if(s.top()<mn)
+            mn=2*mn-s.top();
+        
         s.pop();
-        curr_min = s.empty() ? INT_MAX : s.top().second;
     }
     
     int top() {
-        return s.top().first;
+        if(s.top()>=mn)
+        return s.top();
+        
+        return mn;
     }
     
     int getMin() {
-        return curr_min;
+        return mn;
     }
 
 };
