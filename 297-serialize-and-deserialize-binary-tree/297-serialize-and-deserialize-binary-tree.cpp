@@ -10,25 +10,26 @@
 class Codec {
 public:
 
-	// Encodes a tree to a single string.
+	// Encodes a tree to a single string in Preorder fashion.
     string serialize(TreeNode* root) {
         if(!root)
-            return "null";
+            return "NULL";
         return to_string(root->val) + " " + serialize(root->left) + " " + serialize(root->right);
     }
 
     // Decodes your encoded data to tree.
-    TreeNode* deserialize(string data) {
+    TreeNode* deserialize(string data) 
+    {
         stringstream myis(data);
         return helper(myis);
     }
     
     // helper function for deserialize function
-    TreeNode * helper(stringstream& myis){
+    TreeNode *helper(stringstream &myis){
         string cur;
         myis>>cur;
 
-        if(cur == "null")
+        if(cur == "NULL")
             return NULL;
 
         TreeNode * root = new TreeNode(stoi(cur));
