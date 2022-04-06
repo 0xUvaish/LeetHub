@@ -27,7 +27,7 @@ public:
 TreeNode* bstFromPreorder(vector<int>& preorder) 
     {
         int i=0;
-        TreeNode * root = helper(preorder, i,INT_MAX);
+        TreeNode *root = helper(preorder, i,INT_MAX);
         return root;
     }
   
