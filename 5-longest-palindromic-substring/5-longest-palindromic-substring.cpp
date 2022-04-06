@@ -1,13 +1,17 @@
 class Solution {
 public:
+    
+//Non-dp & same complexity solution
     void checkPalindrome(string &s, int left, int right, int &maxLen, int &index){
 
         while(left>=0 && right<s.length() && s[left]==s[right])
         {
-            if(maxLen<(right-left+1) ){
+            if(maxLen<(right-left+1) )
+            {
                 maxLen = right-left+1;
                 index = left;
             }
+            
             left--; 
             right++;
         }
