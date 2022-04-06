@@ -13,14 +13,16 @@ public:
         mp['M'] = 1000;
         
         int res = 0;
+        int n = s.size();
         
-        for(int i = 0; i < s.size(); i++)
+        for(int i = 0; i < n; i++)
         {
-            if(i+1 < s.size() && mp[s[i]] < mp[s[i+1]])
+            if(i+1 < n && mp[s[i]] < mp[s[i+1]])
             {
                 res += mp[s[i+1]] - mp[s[i]];
-                i += 1;
+                i++;
             }
+            
             else
                 res += mp[s[i]];
         }
