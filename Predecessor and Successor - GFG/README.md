@@ -1,5 +1,5 @@
 # Predecessor and Successor
-##  Easy 
+## Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">There is BST given with root node with key part as integer only.&nbsp;You need to find the inorder successor and predecessor of a given key. In case, if the either of predecessor or successor is not found print -1.</span></p>
 
