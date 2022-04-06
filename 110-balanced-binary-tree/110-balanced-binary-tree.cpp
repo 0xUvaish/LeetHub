@@ -11,6 +11,8 @@
  */
 class Solution {
 public:
+    
+    //Optimised from O(n^2) to O(n) by using same height function
     int help(TreeNode* root)
     {
         if(!root)
