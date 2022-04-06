@@ -98,7 +98,6 @@ class Solution {
     vector<int> bottomView(Node *root)
     {
         vector<int>ans;
-        
         if(root==NULL)
             return ans;
             
