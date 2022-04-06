@@ -103,9 +103,9 @@ class Solution
     {
         revInOrder(root->right, k, index, res);
         
+        index++;        
         if(index == k)
             res = root->data;
-        index++;
         
         revInOrder(root->left, k, index, res);
     }
@@ -113,7 +113,7 @@ class Solution
 
     int kthLargest(Node *root, int K)
     {
-          int index = 1;
+          int index = 0;
           int res = -1;
     revInOrder(root, K, index, res);
     return res;
