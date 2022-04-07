@@ -10,8 +10,7 @@ public:
                 graph[i][j] = abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1]);
         
 
-        vector<int>visited;
-        visited.assign(n,0);
+        vector<int> visited(n,0);
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
 
         pq.push({0,0});
