@@ -42,7 +42,7 @@ public:
         {
             if(!visited[i])
             {
-                dfs(adj,tin,low,visited,0,-1,time);               
+                dfs(adj,tin,low,visited,i,-1,time);               
             }
         }
         
