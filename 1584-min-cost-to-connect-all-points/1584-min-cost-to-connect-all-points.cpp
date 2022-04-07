@@ -11,7 +11,7 @@ public:
         
 
         vector<int>visited;
-        visited.assign(n+1,0);
+        visited.assign(n,0);
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
 
         pq.push({0,0});
