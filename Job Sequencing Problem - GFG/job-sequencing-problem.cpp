@@ -34,7 +34,7 @@ class Solution
     //Function to find the maximum profit and the number of jobs done.
     vector<int> JobScheduling(Job arr[], int n) 
     { 
-       int maxdead, count=0, maxP=0;
+       int maxdead=0, count=0, maxP=0;
        
        for(int i=0;i<n;i++)
         maxdead = max(maxdead, arr[i].dead);
