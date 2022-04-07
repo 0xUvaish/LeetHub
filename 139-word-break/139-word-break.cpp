@@ -1,23 +1,38 @@
 class Solution {
 public:
     
-    vector<int> isBreaked; 
-    bool wordBreak(string s, vector<string>& wordDict) {
-        isBreaked.assign(s.size(), -1); 
-        return breakString(s, wordDict, 0); 
+    bool wordBreak(string &s,int n,int i,unordered_set<string> &words, vector<int> &dp)
+    {
+        if(i==n)
+            return 1;
+        
+        if(dp[i]!=-1) 
+            return dp[i]==1;          
+
+            string t="";
+            for(int k=i;k<n;k++)
+            {
+                t+=s[k];
+                if(words.find(t)!=words.end())
+                {
+                    if(wordBreak(s,n,k+1,words,dp))
+                    {
+                        return dp[i]=1;
+                    }
+                }
+            }
+            
+    return dp[i]=0;
+        
     }
     
-    bool breakString(string &s, vector<string> &dict, int cur) {
-        if (cur == s.size()) return true; 
-        if (isBreaked[cur] != -1) return isBreaked[cur]; 
+    bool wordBreak(string s, vector<string>& wordDict) 
+    {
         
-        bool rst = false; 
-        for (int i = 0; i < dict.size(); i++) {
-            if (dict[i] == s.substr(cur, dict[i].size())) {
-                rst |= breakString(s, dict, cur+dict[i].size()); 
-            }
-        }
-        isBreaked[cur] = rst; 
-        return rst; 
+        unordered_set<string> words(wordDict.begin(),wordDict.end());
+        int n=s.length();
+        vector<int> dp(n+1,-1);
+        
+        return wordBreak(s,n,0,words,dp);
     }
 };
