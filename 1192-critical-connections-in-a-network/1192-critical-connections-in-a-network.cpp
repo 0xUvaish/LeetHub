@@ -37,8 +37,16 @@ public:
         
         addEdge(adj,connections);  //Created the graph
         int time = 0;
-
-        dfs(adj,tin,low,visited,0,-1,time);  //Run Tarjan's Algo
+        
+        for(int i=0;i<n;i++)
+        {
+            if(!visited[i])
+            {
+                dfs(adj,tin,low,visited,0,-1,time);               
+            }
+        }
+        
+        // dfs(adj,tin,low,visited,0,-1,time);  //Run Tarjan's Algo
         
         return ans;
     }
