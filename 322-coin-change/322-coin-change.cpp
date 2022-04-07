@@ -19,7 +19,6 @@ public:
                 else
                 {
                     dp[i][j] = min(dp[i-coins[j-1]][j]+1,dp[i][j-1]);
-                    dp[i][j] = (dp[i][j] == INT_MAX-1) ? INT_MAX-1 : dp[i][j];
                 }
             }
         }
