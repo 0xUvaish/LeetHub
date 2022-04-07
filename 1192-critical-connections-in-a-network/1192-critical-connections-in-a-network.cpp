@@ -32,7 +32,7 @@ public:
     
     vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections)
     {
-        vector<int> adj[n], tin(n,0), low(n,0);
+        vector<int> adj[n], tin(n,-1), low(n,-1);
         vector<bool> visited(n, false);
         
         addEdge(adj,connections);  //Created the graph
