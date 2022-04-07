@@ -4,11 +4,8 @@ public:
     
     int fun(vector<string>& s, int m, int n , int l , int i)
     {
-        if(i>=l)
+        if(i>=l || (m==0 && n==0))
             return dp[i][m][n] = 0;
-        
-        if(m==0 && n==0)
-            return dp[i][m][n]=0;
         
         if(dp[i][m][n]!=-1)
             return dp[i][m][n]; 
