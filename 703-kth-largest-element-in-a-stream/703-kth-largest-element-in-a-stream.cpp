@@ -10,7 +10,7 @@ public:
         for (int &n : nums)
         {
             pq.push(n);
-            if(pq.size() > k)
+            if(pq.size()>k)
                 pq.pop();
         }
     }
@@ -18,7 +18,7 @@ public:
     int add(int val) 
     {
         pq.push(val);
-        if(pq.size() > k)
+        if(pq.size()>k)
             pq.pop();
         
      return pq.top();
