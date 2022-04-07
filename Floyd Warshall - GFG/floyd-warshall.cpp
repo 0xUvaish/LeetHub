@@ -19,6 +19,7 @@ class Solution {
 	            {
 	                if(matrix[i][k]==-1 || matrix[k][j]==-1)
 	                    continue;
+	                    
 	                if(matrix[i][j]==-1)
 	                    matrix[i][j] = matrix[i][k] + matrix[k][j];
 	                else
