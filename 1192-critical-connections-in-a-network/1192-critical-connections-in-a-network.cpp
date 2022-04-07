@@ -37,7 +37,9 @@ public:
         
         addEdge(adj,connections);  //Created the graph
         int time = 0;
-        
+       
+        //Following lines in case of multiple components in the graph
+        /*
         for(int i=0;i<n;i++)
         {
             if(!visited[i])
@@ -45,8 +47,10 @@ public:
                 dfs(adj,tin,low,visited,i,-1,time);               
             }
         }
+        */
         
-        // dfs(adj,tin,low,visited,0,-1,time);  //Run Tarjan's Algo
+        //Here all are already connected so just one component, hence can start from any node (0 in this case)
+        dfs(adj,tin,low,visited,0,-1,time);  //Run Tarjan's Algo
         
         return ans;
     }
