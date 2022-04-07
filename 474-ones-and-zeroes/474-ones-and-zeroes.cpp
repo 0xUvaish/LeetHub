@@ -4,7 +4,7 @@ public:
     
     int fun(vector<string>& s, int m, int n , int l , int i)
     {
-        if(i>=l || m<0 || n<0)
+        if(i>=l)
             return dp[i][m][n] = 0;
         
         if(m==0 && n==0)
