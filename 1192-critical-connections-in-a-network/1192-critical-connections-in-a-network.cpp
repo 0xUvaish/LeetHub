@@ -9,6 +9,7 @@ public:
             adj[connections[i][1]].push_back(connections[i][0]);
         }
     }
+    
     // Bridges Algo is here
     void dfs(vector<int> adj[],vector<int> &tin,vector<int> &low,vector<bool> &visited,int s,int parent,int &time)
     {
