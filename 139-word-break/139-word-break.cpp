@@ -14,12 +14,8 @@ public:
             {
                 t+=s[k];
                 if(words.find(t)!=words.end())
-                {
                     if(wordBreak(s,n,k+1,words,dp))
-                    {
                         return dp[i]=1;
-                    }
-                }
             }
             
     return dp[i]=0;
