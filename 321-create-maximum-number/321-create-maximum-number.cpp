@@ -1,12 +1,12 @@
 class Solution {
 public:
     
-    vector<int> maxelement(vector<int> vec,int k,int size)  //Monotonically decreasing vectors
+    vector<int> maxelement(vector<int> vec,int k,int n)  //Monotonically decreasing vectors
     {
         vector<int> res;
-        for(int i=0;i<size;i++)
+        for(int i=0;i<n;i++)
         {
-            while(!res.empty() && res.back()<vec[i] && size+res.size()-i>k)
+            while(!res.empty() && res.back()<vec[i] && n+res.size()-i>k)
                 res.pop_back();
             
             if(res.size()<k)
