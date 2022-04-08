@@ -2,11 +2,12 @@ class Solution {
 public:
     
 string removeDuplicateLetters(string s) {
-        vector<int> dict(256,0);
-        vector<bool> vis(256,false);
+        vector<int> dict(123,0);
+        vector<bool> vis(123,false);
         
         for(auto &c:s)
             dict[c]++;
+    
         string res = "";
     
         for(auto &c:s)
