@@ -1,23 +1,30 @@
 class Solution {
 public:
+    bool static comp(vector<int> &A, vector<int> &B)
+    {
+        if(A[0]!=B[0])
+            return A[0]<B[0];
+        else
+            return A[1]>B[1];
+    }
+    
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
         
-        sort(intervals.begin(),intervals.end());        
-           
-        int x1 = intervals[0][0];
-        int x2 = intervals[0][1];
+        sort(intervals.begin(),intervals.end(), comp);        
+        int n = intervals.size();
+        int endtime = intervals[0][1];
+        int res=1;
         
-		 int res = 1;
-        for(int i= 1; i<intervals.size(); ++i)
+        for(auto it: intervals)
         {
-            if(intervals[i][0] > x1 && intervals[i][1] > x2)
-                ++res;
-
-            if(intervals[i][1] > x2)
+            if(endtime>=it[1])     //completely submerged
+                continue;
+            else
             {
-                x1 = intervals[i][0];
-                x2 = intervals [i][1];
+                res++;
+                endtime = it[1];
             }
+        
         }
         
         return res;
