@@ -6,10 +6,10 @@ public:
         
         for(int i=0;i<n;i++)
         {
-        while(!ans.empty() && (ans.back()>nums[i]) && (n+ans.size()-i>k))
-          ans.pop_back();
+            while(!ans.empty() && (ans.back()>nums[i]) && (n+ans.size()-i>k))
+                ans.pop_back();
             
-          if(ans.size()<k) 
+            if(ans.size()<k) 
               ans.push_back(nums[i]);
         }
 		
