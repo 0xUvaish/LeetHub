@@ -16,47 +16,59 @@ public:
 
 class Solution {
 public:
-    Node* copyRandomList(Node* head) {
-
-        if(!head)
-            return head;
-        
+    
+    void handleRandom(Node* head)
+    {
         Node* temp = head;
-        
-        while(temp!=NULL)
+        while(temp)
+        {
+            if(temp->random)
+                temp->next->random = temp->random->next;
+            
+            temp=temp->next->next;
+        }       
+    }
+    
+    void copyList(Node* head)
+    {
+        Node* temp = head;
+        while(temp)
         {
             Node* newNode = new Node(temp->val);
             newNode->next = temp->next;
             temp->next = newNode;
             temp=newNode->next;
-        }
+        }        
+    }
+    
+    Node* detach(Node* head)
+    {
+        Node* dummy = new Node(-1);
+        Node *tail = dummy, *temp = head;
         
-        temp = head;
-        
-        while(temp!=NULL)
+        while(temp)
         {
-            if(temp->random!=NULL)
-                temp->next->random = temp->random->next;
-            
-            
-            temp=temp->next->next;
+            tail->next = temp->next;
+            tail = tail->next;
+            temp->next = tail->next;
+            temp = temp->next;
         }
         
-        Node* root, *ans = head->next;
-        temp = head->next;
-        root = head;
+        return dummy->next;
+    }
+    
+    
+    Node* copyRandomList(Node* head) 
+    {
+
+        if(!head)
+            return head;
         
-        while(root!=NULL)
-        {
-            root->next = temp->next;
-            if(root->next)
-                temp->next = root->next->next;
-            
-            root=root->next;
-            temp=temp->next;
-        }
+        copyList(head);
+        handleRandom(head);
+        Node *newHEAD  = detach(head);
         
-        return ans;
+        return newHEAD;
         
     }
 };
