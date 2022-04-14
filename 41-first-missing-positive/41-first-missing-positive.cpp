@@ -5,7 +5,6 @@ public:
      
         int n=nums.size();
         
-        
         //Some kind of swap sort
         for(int i=0;i<n;i++)
         {
@@ -16,7 +15,7 @@ public:
            }
             
         }
-                    //Now checking if the index is having its corresponding element or not
+                //Now checking if the index is having its corresponding element or not
         for(int i=0;i<n;i++)
         {
             if(nums[i]!=i+1)
