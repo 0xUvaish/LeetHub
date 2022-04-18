@@ -20,7 +20,10 @@ void solve(TreeNode* root, int& k, int& cnt, int& ans){
         
         cnt++;
         if(cnt == k)
+        {
             ans = root->val;
+            return;
+        }
     
     solve(root->right, k, cnt, ans);
 }
