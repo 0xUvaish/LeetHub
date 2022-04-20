@@ -6,3 +6,6 @@ BEGIN
   );
 END
 
+# Method 1 - Limit & Offset
+# SELECT IFNULL((SELECT DISTINCT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET x), NULL)
+# Method 2 - Correlated Subqueries
