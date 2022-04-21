@@ -5,8 +5,8 @@ class MyHashSet {
     Hash
     Search list iterator
     Contains
-    Add
-    Remove
+    Add Key
+    Remove Key
     */
     
 public:
