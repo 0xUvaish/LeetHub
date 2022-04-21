@@ -5,9 +5,9 @@ class MyHashMap {
     Hash
     Search list iterator
     Contains
-    Remove Mapping
-    Get Key-Value
-    Put Key-Value (uses remove)
+    Get Val for Key
+    Remove Key-Val
+    Put Key-Val (uses remove)
     */
     
 public:
@@ -49,15 +49,6 @@ public:
             return false;
     }
     
-    void remove(int key) 
-    {
-        if(!contains(key))
-             return;
-        
-        int i = hash(key);
-        m[i].erase(search(key));   
-    }
-    
     int get(int key) 
     {
         if(!contains(key))
@@ -65,6 +56,15 @@ public:
         
         int i = hash(key);
         return (search(key)->second);  
+    }
+    
+    void remove(int key) 
+    {
+        if(!contains(key))
+             return;
+        
+        int i = hash(key);
+        m[i].erase(search(key));   
     }
     
     void put(int key, int value) 
