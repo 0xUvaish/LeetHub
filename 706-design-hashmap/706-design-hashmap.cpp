@@ -4,9 +4,10 @@ class MyHashMap {
     Contructor
     Hash
     Search list iterator
+    Contains
     Remove Mapping
     Get Key-Value
-    Put Key-Value
+    Put Key-Value (uses remove)
     */
     
 public:
