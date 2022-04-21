@@ -1,26 +1,80 @@
 class MyHashMap {
+    
+    /* Order of Methods ->
+    Contructor
+    Hash
+    Search list iterator
+    Remove Mapping
+    Get Key-Value
+    Put Key-Value
+    */
+    
 public:
-    int a[1000001];
+    vector<list<pair<int,int>>> m;
+    int siz;
+    
     MyHashMap() 
     {
-        memset(a,-1,sizeof(a));
+        siz=1e6+1;
+        m.resize(siz);
     }
     
-    void put(int key, int value) 
+    int hash(int key)
     {
-        ios_base::sync_with_stdio(false);
-        a[key] = value;
+        return key%siz;
     }
     
-    int get(int key) 
+    list<pair<int,int>> :: iterator search(int key)
     {
-        return a[key];   
+        int i = hash(key);
+        
+        auto it = m[i].begin();
+        while(it!=m[i].end())
+        {
+            if(it->first == key)
+                return it;
+        }
+        
+        return it;
+    }
+    
+    bool contains(int key) 
+    {   
+        int i = hash(key);
+        
+        if(search(key) != m[i].end())
+            return true;
+        else
+            return false;
     }
     
     void remove(int key) 
     {
-        a[key] = -1;
+        if(!contains(key))
+             return;
+        
+        int i = hash(key);
+        m[i].erase(search(key));   
     }
+    
+    int get(int key) 
+    {
+        if(!contains(key))
+             return -1;
+        
+        int i = hash(key);
+        return (search(key)->second);  
+    }
+    
+    void put(int key, int value) 
+    {
+        remove(key);
+        
+        int i = hash(key);
+        m[i].push_back({key,value});  
+    }
+    
+    
 };
 
 /**
