@@ -24,7 +24,7 @@ public:
 		while(curr)
         {
 			next = curr->next;
-			while(tmp->next && (tmp->next->val < curr -> val))
+			while(tmp->next && (tmp->next->val < curr->val))
 				tmp = tmp -> next;
 
 			curr->next = tmp->next;
