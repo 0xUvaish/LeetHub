@@ -16,8 +16,9 @@ public:
             return head;
 
 		ListNode *dummy = new ListNode(0);
-		ListNode *curr = head;
 		ListNode *tmp = dummy;
+        
+        ListNode *curr = head;
 		ListNode *next;
 
 		while(curr)
