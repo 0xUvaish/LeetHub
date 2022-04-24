@@ -29,6 +29,8 @@ public:
 
 			curr->next = tmp->next;
 			tmp->next = curr;
+            
+            //For next iteration
 			tmp = dummy;
 			curr = next;
 		}
