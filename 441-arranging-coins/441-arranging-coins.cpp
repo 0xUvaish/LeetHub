@@ -15,7 +15,7 @@ int arrangeCoins(int n) {
 */
   
     
-// O(logn) Solution
+/* O(logn) Solution
 int arrangeCoins(int n)
 {
     long low=1, high=n, ans=0;
@@ -38,5 +38,18 @@ int arrangeCoins(int n)
     }
     return ans;
  }
-     
+ 
+ */
+    
+    int arrangeCoins(int n)
+    
+    {
+      // Tk = k(k+1)/2 where k is the number of rows (here Tk is n). Lookup Triangular Numbers if interested
+      // k^2 + k <= 2Tk
+      // (k + .5)^2 <= 2Tk + .25      (complete the square)
+      // k <= sqrt(2Tk + .25) - .5    (solve for k)
+      return (int)(sqrt(2*(double)n + .25) - .5);
+    }
+ 
+    
 };
