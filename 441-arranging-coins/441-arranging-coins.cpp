@@ -18,7 +18,7 @@ int arrangeCoins(int n) {
 // O(logn) Solution
 int arrangeCoins(int n)
 {
-    long low=0, high=n, ans=0;
+    long low=1, high=n, ans=0;
     while(low<=high)
     {
         long mid =(low+high)/2;
