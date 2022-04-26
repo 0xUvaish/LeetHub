@@ -12,7 +12,7 @@ class Solution {
         
         for(int child: revAdj[src]) 
             if(child != p)
-                changes += minChanges(child, src, adj, revAdj);
+                changes += minChanges(child, src, adj, revAdj) + 0; //only back-edges
         
         return changes;
     }
@@ -25,8 +25,8 @@ class Solution {
         
         for(int i=0; i<e; i++) 
         {
-            adj[connections[i][0]].push_back(connections[i][1]);
-            revAdj[connections[i][1]].push_back(connections[i][0]);  
+            adj[connections[i][0]].push_back(connections[i][1]); //Edges away from Node
+            revAdj[connections[i][1]].push_back(connections[i][0]);  //Edges towards Node
         }
         
         return minChanges(0, -1, adj, revAdj);
