@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //Prims Algorithms using Priorirty Queue
     int minCostConnectPoints(vector<vector<int>>& points) {
           
         int n = points.size();
@@ -32,7 +34,7 @@ public:
             ans+=weight;
             
             for(int i=0;i<n;i++)
-                if(visited[i]==0)
+                if(!visited[i])
                     pq.push(make_pair(graph[src][i],i));
             
         }
