@@ -10,12 +10,12 @@ public:
             if(endWord == word)
                 isPresent = true;
         
-        if(isPresent == false)
+        if(!isPresent)
             return 0;
         
         queue<string> q;
-        q.push(beginWord) ; 
-        int ladder = 1 ;
+        q.push(beginWord); 
+        int ladder = 1;
         
         while(!q.empty())  //BFS
         {
@@ -27,7 +27,7 @@ public:
                 string curr = q.front(); q.pop();
                 for(int i=0; i<curr.size();i++)
                 {
-                    string temp = curr ;
+                    string temp = curr;
                     for(char c = 'a'; c<= 'z'; c++)
                     {
                         temp[i] = c;
@@ -37,7 +37,7 @@ public:
                         if(temp == endWord)
                             return ladder;   //answer
                         
-                        if(dict.count(temp) != 0)  //new word exist in wordList
+                        if(dict.count(temp))  //new word exist in wordList
                         {
                             q.push(temp);
                             dict.erase(temp);
