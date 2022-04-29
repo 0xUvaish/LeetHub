@@ -1,7 +1,8 @@
 class Solution {
 public:
     
-bool dfs(int node, vector<vector<int>> &graph, vector<int> &col, int cur){
+bool dfs(int node, vector<vector<int>> &graph, vector<int> &col, int cur)
+{
         if(col[node] != -1)
         {
             if(col[node] == cur) 
