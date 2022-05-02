@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    //Method 1
     //Jump Method to reach target (n index)
     int minTaps(int n, vector<int>& ranges)
     {
@@ -36,4 +36,6 @@ public:
         
     return maxIndex>=n? jump: -1;
     }
+    
+    //Method 2
 };
