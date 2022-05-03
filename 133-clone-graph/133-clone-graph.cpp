@@ -19,28 +19,36 @@ public:
 };
 */
 
-class Solution {
+class Solution 
+{
 public:
-     void dfs(Node* curr,Node* start, unordered_map<int,Node*> &s){
+     void dfs(Node* curr, Node* start, unordered_map<int,Node*> &mp)
+     {
         start->val = curr->val;
-        s[start->val] = start;
+        mp[start->val] = start;
+         
         for(int i=0;i<curr->neighbors.size();i++)
         {
-            if(s.find(curr->neighbors[i]->val) == s.end())
+            if(mp.find(curr->neighbors[i]->val) == mp.end())
             {
                 Node* next = new Node();
-                dfs(curr->neighbors[i],next,s);
+                dfs(curr->neighbors[i],next,mp);
             }
-            start->neighbors.push_back(s[curr->neighbors[i]->val]);
+            
+            start->neighbors.push_back(mp[curr->neighbors[i]->val]);
         }
-        return;
+         
     }
+    
     Node* cloneGraph(Node* node) {
+        
         if(!node) 
             return NULL;
+        
         Node* start = new Node();
-        unordered_map<int,Node*> s;
-        dfs(node,start,s);
+        unordered_map<int,Node*> mp;
+        
+        dfs(node, start, mp);
         return start;
     }
 };
