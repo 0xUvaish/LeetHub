@@ -17,6 +17,6 @@ public:
                 beg = n-1-i; 
 		}
         
-		return end - beg + 1;
+	return end - beg + 1;
 	}
 };
