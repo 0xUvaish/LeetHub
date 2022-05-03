@@ -1,17 +1,18 @@
 class Solution {
 public:
+    //Standard KMP/LPS Algo to get LPS of string s
     vector<int> kmp_algo(string s)
     {
-        int j=0, i=1, n=s.size();
-        vector<int> lps(n,0);
+        int j=0, i=1, m=s.size();
+        vector<int> lps(m,0);
         
-        while(i<n)
+        while(i<m)
         {
             if(s[i]==s[j])
             {
-                lps[i]=j+1;
-                i++;
                 j++;
+                lps[i]=j;
+                i++;
             }
             else if(j!=0)
                 j=lps[j-1];
@@ -22,7 +23,8 @@ public:
             }
             
         }
-        return lps;
+        
+    return lps;
     }
     
     bool repeatedSubstringPattern(string s) 
