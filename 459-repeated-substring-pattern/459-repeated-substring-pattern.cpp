@@ -30,10 +30,12 @@ public:
     bool repeatedSubstringPattern(string s) 
     {
         int n=s.size();
-        auto lps = kmp_algo(s);
         
-        int len = n-lps[n-1];
-        if(lps[n-1]%len == 0 && lps[n-1]!=0) 
+        auto lps = kmp_algo(s);
+        int k = lps[n-1];  //LPS of given string   
+        
+        //Repeated Substring only if n is divisible by n-k
+        if(k!=0 && n%(n-k)==0) 
             return true;
         
         return false;
