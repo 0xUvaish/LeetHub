@@ -16,7 +16,7 @@ public:
         int flips=0;
         int n = max({countBits(a), countBits(b), countBits(c)});
         
-        for(int i=0;i<=31;i++)
+        for(int i=0;i<n;i++)
         {
             
             if(c&(1<<i))
