@@ -15,17 +15,17 @@ public:
             time[i] = (1.0)*(target-Pos_Speed[i].first)/Pos_Speed[i].second;
         
         int ans=1;
-        double minTime=time[n-1];
+        double maxTime=time[n-1];
         
         for(int i=n-2;i>=0;i--)
         {
-            if(time[i]>minTime)
+            if(time[i]>maxTime)      //Not a fleet
             {
                 ans++;
-                minTime = time[i];
+                maxTime = time[i];
             }
-            else
-                minTime = max(minTime, time[i]);    
+            else                     //A fleet
+                maxTime = max(maxTime, time[i]);    
         }
         
     return ans;
