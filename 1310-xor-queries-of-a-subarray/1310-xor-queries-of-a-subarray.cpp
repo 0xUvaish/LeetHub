@@ -11,6 +11,7 @@ public:
         int m = queries.size();
         vector<int> ans(m);
         ans.clear();
+        
         for(auto x: queries)
         {
             int l=x[0];
