@@ -51,6 +51,8 @@
 // };
 
 
+//Method 2: Single Queue Pop&Top Efficient
+
 class MyStack 
 {
     queue<int> q;
