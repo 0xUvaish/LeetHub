@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 
-
+#Correlated Subqueires [Brute Force in terms of two 'for' loop]
 
 SELECT D.name AS Department, E1.name AS Employee, E1.salary AS Salary
 FROM Employee AS E1, Department AS D
