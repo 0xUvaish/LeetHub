@@ -1,10 +1,14 @@
 class Solution {
 public:
-    bool isMatch(string s, string p) {
-	regex b(p);
-	if(regex_match(s, b))
+    //Method 1: Direct STL 
+    bool isMatch(string s, string p) 
+    {
+	regex obj(p);
+	if(regex_match(s, obj))
 		return true;
 	else
 		return false;
     }
+    
+    //Method 2: 
 };
