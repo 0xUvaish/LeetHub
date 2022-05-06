@@ -15,7 +15,7 @@ public:
     bool dp(int i, int j, string s, string p, vector<vector<int>> &memo)
     {
         if(memo[i][j]!=-1)
-            return (memo[i][j] == 1);
+            return memo[i][j];
         
         bool ans;
         if(j==p.length())
