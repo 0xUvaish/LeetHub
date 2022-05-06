@@ -50,7 +50,7 @@ public:
         {
             int l = left[i];
             int r = right[i];
-            long summ = prefixSum[r] - (l>0? prefixSum[l-1]:0);
+            long long summ = prefixSum[r] - (l>0? prefixSum[l-1]:0);
             
             temp = (nums[i]*(summ));
             maxi = max(maxi, temp);
