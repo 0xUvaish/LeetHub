@@ -1,36 +1,41 @@
 class Solution {
 public:
-    int total=0;
-    array<int,4> abcd; // 4 sides sum. 
-    bool sets(vector<int> &arr,int i){  // Optimising O(4^N) TLE approach with pruning and Optimisations.
-        if(i==arr.size()){  // BASE
-            for(int i=0;i<=3;i++)if(abcd[i]!=total)return 0;
-            return 1;
-        }
+    bool solve(vector<int>& m, int idx, vector<int> &s)
+    {
+          if(idx == m.size())
+          {
+               if(s[0] == 0 && s[1] == 0 && s[2] == 0 && s[3] == 0) 
+                   return true;
+              
+               return false;
+          }
         
-        for(int j=0;j<=3;j++){
-            
-            int k=j-1;
-            while(k>=0){  //Optimisation II, 100 ms improvement, but not enough to remove TLE..
-                if(abcd[j]==abcd[k])break;
-                k--;
-            }
-            if(k!=-1)continue;
-            
-            if(abcd[j]+arr[i]>total)continue; //Optimisation I(when sorting input arr[] in decreasing order) removed TLE.
-          
-            abcd[j]+=arr[i];
-            if(sets(arr,i+1))return 1; //implementation optimisation/pruning, no need to backtrack if found valid solution.
-            abcd[j]-=arr[i]; // backtracking.
-        }
-        return 0;
+          for(int i =0; i<4; i++)
+          {
+              if(m[idx] > s[i]) 
+                  continue;
+              
+              s[i] -= m[idx];
+              if(solve(m, idx + 1, s))
+                  return true;
+              s[i] += m[idx];
+          }
+        
+        return false;
     }
-    bool makesquare(vector<int>& matchsticks) {
-        for(int i=0;i<matchsticks.size();i++)total+=matchsticks[i];
-        if((total%4!=0)||(matchsticks.size()<4))return 0;// pruning I.
-        total/=4;
-        if(*max_element(matchsticks.begin(),matchsticks.end())>total)return 0; // pruning II.
-        sort(matchsticks.begin(),matchsticks.end(),greater<int>());//Optimisation I-see above(sorting input arr[] in decreasing order) removed TLE.
-        return sets(matchsticks,0);
+    
+    bool makesquare(vector<int>& matchsticks) 
+    {
+         int sum = accumulate(matchsticks.begin(), matchsticks.end(),0);
+         if(sum % 4 != 0) 
+             return false;
+        
+         int side = sum / 4;
+        
+         sort(matchsticks.rbegin(), matchsticks.rend());
+        
+         vector<int> sides(4,side);
+        
+         return solve(matchsticks, 0, sides);
     }
 };
