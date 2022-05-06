@@ -19,14 +19,15 @@ public:
         
         bool ans;
         if(j==p.length())
-            ans = i == s.length();
+            ans = (i == s.length());
         else
         {
-            bool fchar =  (i<s.length() && (p[j]==s[i] || p[j]=='.'));
+            bool match =  (i<s.length() && (p[j]==s[i] || p[j]=='.'));
+            
             if(j+1<p.length() && p[j+1]=='*')
-                ans = (dp(i, j+2, s, p, memo)||(fchar && dp(i+1, j, s, p, memo)));
+                ans = (dp(i, j+2, s, p, memo)|| (match && dp(i+1, j, s, p, memo)));
             else
-                ans = fchar && dp(i+1, j+1, s, p, memo);
+                ans = match && dp(i+1, j+1, s, p, memo);
         }
         memo[i][j] = ans?1:0;
         return ans;
