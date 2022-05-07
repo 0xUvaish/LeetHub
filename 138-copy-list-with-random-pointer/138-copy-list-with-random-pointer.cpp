@@ -44,14 +44,15 @@ public:
     Node* detach(Node* head)
     {
         Node* dummy = new Node(-1);
-        Node *tail = dummy, *temp = head;
+        Node *tail = dummy, *curr = head;
         
-        while(temp)
+        while(curr)
         {
-            tail->next = temp->next;
+            tail->next = curr->next;
             tail = tail->next;
-            temp->next = tail->next;
-            temp = temp->next;
+            
+            curr->next = tail->next;
+            curr = curr->next;
         }
         
         return dummy->next;
