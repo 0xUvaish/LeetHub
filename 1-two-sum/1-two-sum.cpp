@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //Method 1: O(n) TC, O(n) SC
     vector<int> twoSum(vector<int>& nums, int target) {
         
         vector<int>ans;
