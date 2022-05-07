@@ -7,6 +7,7 @@ public:
         int res2=INT_MIN;
         int cnt2=0;
         int n=nums.size();
+        
         for(int i=0;i<nums.size();i++)
         {
             if(nums[i]==res1)
@@ -35,6 +36,7 @@ public:
             }
         }
 
+        //Verification
         cnt1=0;cnt2=0;
         
         for(int i:nums)
