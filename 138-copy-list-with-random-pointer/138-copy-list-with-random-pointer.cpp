@@ -25,7 +25,7 @@ public:
             Node* newNode = new Node(temp->val);
             newNode->next = temp->next;
             temp->next = newNode;
-            temp=newNode->next;
+            temp = newNode->next;
         }        
     }
     
