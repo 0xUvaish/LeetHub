@@ -41,8 +41,8 @@ public:
             fast = fast->next->next;
         }
         
-        fast = reverseList(slow);
-        slow = head;
+        fast = reverseList(slow); //Right part
+        slow = head; //Left part
         
         while(fast)
         {
