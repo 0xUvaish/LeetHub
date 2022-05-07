@@ -41,10 +41,10 @@ public:
             fast = fast->next->next;
         }
         
-        fast = reverseList(slow); //Right part
-        slow = head; //Left part
+        fast = reverseList(slow);
+        slow = head;
         
-        while(fast)
+        while(fast)  //fast will have either half nodes or 1 less than half nodes
         {
             if(fast->val != slow->val)
                 return false;
