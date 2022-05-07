@@ -15,13 +15,15 @@ class Node
         int maxx;  
         int minn;  
         bool isBst; 
-        int sum;    
-    Node(int _maxx,int _minn,bool _isBst,int _sum)
+        int sum;
+        int size;
+    Node(int _maxx,int _minn,bool _isBst,int _sum, int _size)
     {
         maxx=_maxx; 
         minn=_minn; 
         isBst=_isBst; 
         sum=_sum;
+        size=_size;
     }
 };
 
@@ -31,7 +33,7 @@ public:
     Node helper(TreeNode* root)
     {  
          if(!root) 
-             return Node(INT_MIN,INT_MAX,true,0);
+             return Node(INT_MIN,INT_MAX,true,0,0);
         
          auto lft=helper(root->left);
          auto rgt=helper(root->right);
@@ -40,14 +42,15 @@ public:
          {
                 int newmax=max({root->val,lft.maxx,rgt.maxx});
                 int newmin=min({root->val,lft.minn,rgt.minn});
-                int newsum=root->val +lft.sum+rgt.sum;
+                int newsum=root->val+lft.sum+rgt.sum;
+                int newsize= 1 + lft.size + rgt.size;
              
                 ans=max(ans, newsum);
           
-                return Node(newmax,newmin,true,newsum);
+                return Node(newmax,newmin,true,newsum, newsize);
          }
         
-         return Node(INT_MIN,INT_MAX,false,0);
+         return Node(INT_MIN,INT_MAX,false,0,0);
        
     }
     
