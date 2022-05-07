@@ -44,7 +44,7 @@ public:
         fast = reverseList(slow);
         slow = head;
         
-        while(fast)  //fast will have either half nodes or 1 less than half nodes
+        while(fast)  //fast will have either half nodes or 1 less than half nodes after pointers change
         {
             if(fast->val != slow->val)
                 return false;
