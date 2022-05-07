@@ -14,6 +14,11 @@ public:
 };
 */
 
+//Method 1: O(n) Map Space
+
+
+//Method 2: O(1) Space
+//O(1) Space because returned new list will not be counted in space 
 class Solution {
 public:
 
