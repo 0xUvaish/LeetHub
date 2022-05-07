@@ -27,9 +27,11 @@ class Node
     }
 };
 
+
+//This solution is for maxSum as well as maxSize of largest BST in a Binary Tree
 class Solution {
 public:
-    int ans=0;
+    int maxSum=0, maxSize=0;
     Node helper(TreeNode* root)
     {  
          if(!root) 
@@ -45,7 +47,8 @@ public:
                 int newsum=root->val+lft.sum+rgt.sum;
                 int newsize= 1 + lft.size + rgt.size;
              
-                ans=max(ans, newsum);
+                maxSum=max(maxSum, newsum);
+                maxSize=max(maxSize, newsize);
           
                 return Node(newmax,newmin,true,newsum, newsize);
          }
@@ -58,7 +61,8 @@ public:
     {
         
         helper(root);
-        return ans;
+        cout<<maxSize;
+        return maxSum;
         
     }
 };
