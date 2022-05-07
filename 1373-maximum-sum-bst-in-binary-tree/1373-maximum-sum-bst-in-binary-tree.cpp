@@ -38,10 +38,11 @@ public:
         
          if((lft.isBst && rgt.isBst) && (lft.maxx<root->val) && (root->val < rgt.minn) )
          {
-                ans=max(ans,root->val+lft.sum+rgt.sum);
                 int newmax=max({root->val,lft.maxx,rgt.maxx});
                 int newmin=min({root->val,lft.minn,rgt.minn});
                 int newsum=root->val +lft.sum+rgt.sum;
+             
+                ans=max(ans, newsum);
           
                 return Node(newmax,newmin,true,newsum);
          }
