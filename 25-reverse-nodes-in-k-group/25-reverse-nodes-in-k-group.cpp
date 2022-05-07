@@ -19,15 +19,16 @@ public:
         int count = 0;
         bool flag = false;
         
-        while(curr)
+        while(curr) //K nodes exists or not from head
         {
-            curr=curr->next;
             count++;
             if(count==k)
             {
                 flag = true;
                 break;
             }
+            
+            curr=curr->next;
         }
         
         if(flag) //reverse only if k-sized group found from starting 
@@ -40,6 +41,7 @@ public:
                 curr->next = prev;
                 prev = curr;
                 curr = next;
+                
                 count++;
             }
             
