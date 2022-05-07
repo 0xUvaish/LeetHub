@@ -10,26 +10,42 @@
  */
 class Solution {
 public:
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
-        priority_queue<int, vector<int>, greater<int>> minHeap;
-        for(auto head: lists)
+ ListNode* mergeKLists(vector<ListNode*>& lists) 
+ {
+        priority_queue<pair<int,ListNode*>,vector<pair<int,ListNode*>>,greater<pair<int,ListNode*>>> pq;
+        
+       for(auto x : lists)
+            if(x) 
+                pq.push({x->val,x});
+     
+     
+        ListNode *new_head = nullptr; //new head
+        ListNode *it = nullptr; // iterator for the new list
+     
+        if(pq.empty()) 
+            return new_head;
+     
+        while(!pq.empty())
         {
-            while(head != NULL)
+            ListNode *temp = pq.top().second;
+            pq.pop();
+            
+            if(new_head==nullptr) //First node to be inserted,
             {
-                minHeap.push(head -> val);
-                head = head -> next;
+                new_head = temp;
+                it = new_head;
             }
+            else
+            {
+                it->next = temp;
+                it = it->next;
+            }
+            if(temp->next)
+                pq.push({temp->next->val,temp->next});
+            
         }
-        ListNode *temp = new ListNode(0);
-        ListNode *ptr = temp;
-        
-        while(!minHeap.empty())
-        {
-            ptr->next = new ListNode(minHeap.top());
-            minHeap.pop();
-            ptr = ptr -> next;
-        }
-        
-        return temp->next;
+     
+        it->next = nullptr; //make last node as null
+        return new_head; //return
     }
 };
