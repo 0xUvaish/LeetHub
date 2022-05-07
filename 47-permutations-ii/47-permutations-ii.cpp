@@ -1,12 +1,7 @@
 class Solution {
 public:
-vector<vector<int>>ans;
-    vector<vector<int>> permuteUnique(vector<int>& nums) 
-    {
-        sort(nums.begin(),nums.end());
-        permute(nums,0);
-        return ans;
-    }
+  vector<vector<int>>ans;
+    
     void permute(vector<int>nums,int idx)
     {
         if(idx==nums.size())
@@ -19,11 +14,17 @@ vector<vector<int>>ans;
         {
             if(i!=idx && nums[i]==nums[idx])
                 continue;
-            else
-            {
+            
                 swap(nums[i],nums[idx]);
                 permute(nums,idx+1);
-            }
         }
+    }
+    
+    vector<vector<int>> permuteUnique(vector<int>& nums) 
+    {
+        sort(nums.begin(),nums.end());
+        permute(nums,0);
+        
+        return ans;
     }
 };
