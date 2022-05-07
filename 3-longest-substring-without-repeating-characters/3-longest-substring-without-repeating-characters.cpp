@@ -5,14 +5,16 @@ public:
     {
         int i=0;
         int j=0;
+        int n = s.size();
         int ans=INT_MIN;
         map<char,int>mp;
         if(s.empty())
-        return 0;
+            return 0;
 
-            while(j< s.size())
+            while(j<n)
             {
-                mp[s[j]]++;   
+                mp[s[j]]++; 
+                
                 if(mp.size()==j-i+1)
                 {
                     ans=max(ans,j-i+1);
