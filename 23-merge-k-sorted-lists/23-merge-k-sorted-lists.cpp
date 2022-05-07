@@ -19,33 +19,23 @@ public:
                 pq.push({x->val,x});
      
      
-        ListNode *new_head = nullptr; //new head
-        ListNode *it = nullptr; // iterator for the new list
-     
-        if(pq.empty()) 
-            return new_head;
+        ListNode *dummy = new ListNode();
+        ListNode *it = dummy;
      
         while(!pq.empty())
         {
-            ListNode *temp = pq.top().second;
+            ListNode *best = pq.top().second;
             pq.pop();
             
-            if(new_head==nullptr) //First node to be inserted,
-            {
-                new_head = temp;
-                it = new_head;
-            }
-            else
-            {
-                it->next = temp;
-                it = it->next;
-            }
-            if(temp->next)
-                pq.push({temp->next->val,temp->next});
+            it->next = best;
+            it = it->next;
+            
+            if(best->next)
+                pq.push({best->next->val,best->next});
             
         }
      
-        it->next = nullptr; //make last node as null
-        return new_head; //return
+        it->next = nullptr;
+        return dummy->next;
     }
 };
