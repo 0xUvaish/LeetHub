@@ -7,6 +7,7 @@ public:
         
         vector<int>temp(high-low+1);
         
+        //We cannot directly merge alongwoth counting,,,this is why it is Hard Problem
         while(i<=mid and j<=high)
         {
             if(nums[i]>2*1ll*nums[j])
