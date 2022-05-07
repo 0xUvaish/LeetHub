@@ -5,7 +5,7 @@ vector<string> ans;
 
 void solve(string &s, set<string> &dict, int index, string asf)
 {
-    if(s[index]=='\0')
+    if(index==s.length())
     {
         asf = asf.substr(0, asf.size()-1);
         ans.push_back(asf);
