@@ -2,17 +2,17 @@ class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target)
     {
-        int lx = 0, rx = matrix.size();
+        int lx = 0, rx = matrix.size()-1;
         
-        while (lx < rx)
+        while (lx <= rx)
           {
             int midx = (lx + rx) / 2;
             
             if(matrix[midx].back() >= target && matrix[midx][0] <= target)
             {
-                int ly = 0, ry = matrix[midx].size();
+                int ly = 0, ry = matrix[midx].size()-1;
                 
-                while (ly < ry) 
+                while (ly <= ry) 
                 {
                     int midy = (ly + ry) / 2;
                     
@@ -21,7 +21,7 @@ public:
                     if (matrix[midx][midy] < target)
                         ly = midy + 1;
                     else
-                        ry = midy;
+                        ry = midy-1;
                     
                 }
                 return false;
@@ -31,7 +31,7 @@ public:
                 lx = midx + 1;
             
             else if(matrix[midx][0] > target)
-                rx = midx;
+                rx = midx-1;
             
         }
     return false;  
