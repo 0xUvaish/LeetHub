@@ -17,19 +17,22 @@ public:
         if(!list2)
             return list1;
         
-        ListNode *dummy, *temp;
-        dummy = new ListNode();
-        temp = dummy;
+        ListNode *dummy = new ListNode();
+        ListNode* temp = dummy;
         
-        while(list1 && list2){
-            if(list1->val < list2->val){
+        while(list1 && list2)
+        {
+            if(list1->val < list2->val)
+            {
                 temp->next = list1;
                 list1 = list1->next;
             }
-            else{
+            else
+            {
                 temp->next = list2;
                 list2 = list2->next;   
             }
+            
             temp = temp->next;
         }
         
