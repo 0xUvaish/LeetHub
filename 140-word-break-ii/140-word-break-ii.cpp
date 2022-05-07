@@ -1,9 +1,9 @@
 class Solution {
 public:
 
-    vector<string> ans;
+vector<string> ans;
 
-void solve(string &s, set<string> &ss, int index, string asf)
+void solve(string &s, set<string> &dict, int index, string asf)
 {
     if(s[index]=='\0')
     {
@@ -13,23 +13,23 @@ void solve(string &s, set<string> &ss, int index, string asf)
     }
     
     string temp="";
-    for(int i=index; s[i]!='\0';i++)
+    for(int i=index; i<s.length();i++)
     {
         temp += s[i];
-        if(ss.find(temp)!=ss.end())
+        if(dict.find(temp)!=dict.end())
         {
-            solve(s, ss, i+1, asf+temp+" ");
+            solve(s, dict, i+1, asf+temp+" ");
         }
     }
 }
     
     vector<string> wordBreak(string s, vector<string>& wordDict) {
     
-        set<string> ss;
+    set<string> dict;
     for(auto x: wordDict)
-        ss.insert(x);
+        dict.insert(x);
     
-    solve(s, ss, 0, "");
+    solve(s, dict, 0, "");
     return ans; 
     }
     
