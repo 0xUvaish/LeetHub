@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //Bottom Up Approach - DP
     int numDecodings(string s) 
     {
         int n = s.size();
@@ -20,6 +22,6 @@ public:
                 dp[i] += dp[i-2]; //>=10 will take care of the leading zero case
         }
         
-        return dp[dp.size()-1]; 
+        return dp[n]; 
     }
 };
