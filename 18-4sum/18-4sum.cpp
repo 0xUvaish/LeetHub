@@ -7,15 +7,15 @@ public:
         
         sort(nums.begin(),nums.end());
         
-        for(int i=0;i<n-3;i++)  //4 sum
-            {
-            if(i==0 || i>0 && nums[i]!=nums[i-1])
-                {
+        for(int i=0;i<n-3;i++) //4 sum
+         {
+            if(i==0 || nums[i]!=nums[i-1])                  //a repetition
+             {
+                
                 int a=i;
-
                 for(int j=a+1;j<n-2;j++)  //3 Sum
                     {
-                        if(j==a+1 || (j>1 && nums[j]!=nums[j-1]))
+                        if(j==a+1 || nums[j]!=nums[j-1])     //b repetition
                         {
                              int b=j;
                              int c=j+1;
@@ -27,27 +27,20 @@ public:
 
                                 if(sum==target)
                                 {
+                                    res.push_back({nums[a], nums[b], nums[c], nums[d]});
 
-                                     vector<int>temp;
-                                     temp.push_back(nums[a]);
-                                     temp.push_back(nums[b]);
-                                     temp.push_back(nums[c]);
-                                     temp.push_back(nums[d]);
-
-                                     res.push_back(temp);
-
-                                    while(c<d && nums[c]==nums[c+1]) c++;
-                                    while(c<d && nums[d]==nums[d-1]) d--;
+                                    while(c<d && nums[c]==nums[c+1])  //c repetition
+                                        c++;
+                                    while(c<d && nums[d]==nums[d-1])  //d repetition
+                                        d--;
 
                                     c++;
                                     d--;
                                 }
                                 else if(sum<target)
                                     c++;
-                                
                                 else
                                     d--;
-                                
                             }
                         }
                     }
