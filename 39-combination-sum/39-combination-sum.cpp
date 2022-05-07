@@ -12,6 +12,7 @@ public:
             result.push_back(temp);
             return;
         }
+         
         for(int i=idx;i<candidates.size();i++)
         {
                 temp.push_back(candidates[i]);
@@ -23,8 +24,7 @@ public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
     {
         vector<int> temp;
-        int sum=0;
-        solve(candidates, target, sum, temp, 0);
+        solve(candidates, target, 0, temp, 0);
         return result;
     }
        
