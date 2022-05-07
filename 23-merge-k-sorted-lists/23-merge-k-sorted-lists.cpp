@@ -12,7 +12,7 @@ class Solution {
 public:
  ListNode* mergeKLists(vector<ListNode*>& lists) 
  {
-        priority_queue<pair<int,ListNode*>,vector<pair<int,ListNode*>>,greater<pair<int,ListNode*>>> pq;
+      priority_queue<pair<int,ListNode*>,vector<pair<int,ListNode*>>,greater<pair<int,ListNode*>>> pq;
         
        for(auto x : lists)
             if(x) 
@@ -35,7 +35,6 @@ public:
             
         }
      
-        it->next = nullptr;
-        return dummy->next;
+    return dummy->next;
     }
 };
