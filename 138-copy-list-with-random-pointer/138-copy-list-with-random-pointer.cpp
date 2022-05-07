@@ -16,6 +16,18 @@ public:
 
 class Solution {
 public:
+
+    void copyList(Node* head)
+    {
+        Node* temp = head;
+        while(temp)
+        {
+            Node* newNode = new Node(temp->val);
+            newNode->next = temp->next;
+            temp->next = newNode;
+            temp=newNode->next;
+        }        
+    }
     
     void handleRandom(Node* head)
     {
@@ -27,18 +39,6 @@ public:
             
             temp=temp->next->next;
         }       
-    }
-    
-    void copyList(Node* head)
-    {
-        Node* temp = head;
-        while(temp)
-        {
-            Node* newNode = new Node(temp->val);
-            newNode->next = temp->next;
-            temp->next = newNode;
-            temp=newNode->next;
-        }        
     }
     
     Node* detach(Node* head)
