@@ -15,16 +15,16 @@ public:
             return head;
         
           ListNode *q=head;
-          int l=1;
-           while(q->next)
+          int n=1;
+           while(q->next)     //As I have to stop at last node
            { 
-               l++;
+               n++;
                q=q->next;
            }
         
         q->next=head;
-        k%=l;
-        k=l-k;
+        k%=n;
+        k=n-k;
         
         
         while(k--)
@@ -32,6 +32,7 @@ public:
             
         head = q->next;
         q->next= NULL;
+        
         return head;
     }
 };
