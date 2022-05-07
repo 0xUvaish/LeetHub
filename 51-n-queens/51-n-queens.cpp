@@ -1,7 +1,8 @@
 class Solution {
 public:
 vector<vector<string>> ans;
-    bool issafe(vector<string> &v,int i,int j){
+    bool issafe(vector<string> &v,int i,int j)
+    {
         
         int x=i-1;
         while(x>=0)
