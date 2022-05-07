@@ -5,7 +5,9 @@ public:
     int numDecodings(string s) 
     {
         int n = s.size();
-        vector<int> dp(n+1);
+        vector<int> dp(n+1, 0);
+        
+        //dp[i] means no. of ways to decode i length string from starting
         
         dp[0] = 1;
         dp[1] = (s[0]=='0' ? 0:1);
