@@ -10,9 +10,10 @@ void dfs(int i, int target, vector<int> &arr, vector<vector<int>> &res, vector<i
 
         for (int j = i; j < arr.size(); j++) 
         {
-            if (j > i && arr[j] == arr[j-1]) 
+            if (j!=i && arr[j] == arr[j-1])        //To eliminate duplicate solutions Step II
                 continue; 
-            if (arr[j] > target)
+            
+            if (arr[j] > target)                   //Because all elements are going to be larger
                 break;
 
             ds.push_back(arr[j]); 
@@ -23,11 +24,13 @@ void dfs(int i, int target, vector<int> &arr, vector<vector<int>> &res, vector<i
 
 vector<vector<int>> combinationSum2(vector<int>& candidates, int target) 
     {
-        vector<vector<int>> res;
-        vector<int> ds; 
-        sort(candidates.begin(), candidates.end()); 
-        dfs(0, target, candidates, res,ds); 
-        return res;
+        vector<vector<int>> ans;
+        vector<int> temp; 
+    
+        sort(candidates.begin(), candidates.end()); //To eliminate duplicate solutions Step I
+    
+        dfs(0, target, candidates, ans, temp); 
+        return ans;
 
     }
 };
