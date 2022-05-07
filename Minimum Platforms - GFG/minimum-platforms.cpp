@@ -25,11 +25,12 @@ class Solution{
     	        platform++;
     	        i++;
     	    }
-    	    else
-    	        {
-    	           platform--;
-    	            j++;
-    	        }
+    	    
+    	   else
+    	    {
+    	        platform--;
+    	        j++;
+    	     }
     	   
     	 maxx = max(maxx, platform);
     	}
