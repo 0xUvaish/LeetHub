@@ -12,7 +12,7 @@ public:
      // ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
      // {
      //     unordered_map<ListNode*,int> map;
-     //     while(headA != NULL)
+     //     while(headA)
      //     {
      //         map[headA]++;
      //         headA = headA->next;
