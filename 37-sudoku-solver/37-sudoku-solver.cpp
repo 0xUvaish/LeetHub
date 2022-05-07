@@ -32,7 +32,6 @@ public:
         if(row==9)
         {
             return true;
-            
         }
         
         int newr=row;
