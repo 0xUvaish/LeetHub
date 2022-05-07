@@ -17,14 +17,13 @@ public:
         ListNode* next = nullptr;
         
         int count = 0;
-        ListNode* temp = head;
         bool flag = false;
         
-        while(temp!=nullptr)
+        while(curr)
         {
-            temp=temp->next;
+            curr=curr->next;
             count++;
-            if(count>=k)
+            if(count==k)
             {
                 flag = true;
                 break;
@@ -33,6 +32,7 @@ public:
         
         if(flag) //reverse only if k-sized group found from starting 
         {
+            curr = head;
             count = 0;
             while(curr && count<k)
             {
