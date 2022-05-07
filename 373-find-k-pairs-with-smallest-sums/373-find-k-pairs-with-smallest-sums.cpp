@@ -19,19 +19,17 @@ public:
         
         while(k>0 && !pq.empty())
         {
-            auto popped = pq.top();
+            auto best = pq.top();
             pq.pop();
             
-            int i = popped[1];
-            int j = popped[2];
+            int i = best[1];
+            int j = best[2];
             
             ans.push_back({nums1[i], nums2[j]});
             k--;
             
-            if(j == n2-1)
-                continue;
-            
-            pq.push({nums1[i] + nums2[j+1], i, j+1});
+            if(j != n2-1)
+                pq.push({nums1[i] + nums2[j+1], i, j+1});
         }
         
         return ans;
