@@ -18,17 +18,18 @@ public:
                 ++j;
             }
             
-
-            if(num1 > num2)
-                return 1;
-
+            
             if(num1 < num2)
                 return -1;
+            
+            if(num1 > num2)
+                return 1;
             
             ++i, ++j;
             num1 = 0, num2 = 0;
                 
         }
+        
         return 0;
         
     }
