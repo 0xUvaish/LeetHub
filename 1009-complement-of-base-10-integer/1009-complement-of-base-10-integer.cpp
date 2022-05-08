@@ -9,16 +9,16 @@ public:
 	  /*  If number is even than it's last bit must be 0 and if it's odd it must be 1.
 	  We will make use of this fact only*/
 	  
-	    int p=1, sum=0;
+	    int p=1, ans=0;
         while(n>0)
         {
             if(n%2==0)
-                sum+=p;
+                ans+=p;
            
             n=n>>1;
             p=p<<1;
         }
         
-        return sum;
+        return ans;
     }
 };
