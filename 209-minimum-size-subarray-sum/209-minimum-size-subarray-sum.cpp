@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //Method 1: Sliding Window O(n)
     int minSubArrayLen(int k, vector<int>& nums) {
         //O(N)
         int sum = 0, mn = INT_MAX;
@@ -20,5 +22,5 @@ public:
         return mn == INT_MAX ? 0 : mn;
     }
     
-    //Binary Search on answer will be O(nlogn)
+    //Method 2: Binary Search on answer will be O(nlogn) Doesn't need actually
 };
