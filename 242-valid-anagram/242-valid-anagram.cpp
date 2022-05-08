@@ -13,11 +13,7 @@ public:
        a[s[i]-'a']++;
        b[t[i]-'a']++;
     }
-        
-    for(int i=0;i<=25;i++)
-        if(a[i]!=b[i])
-            return 0;
-        
-    return 1;
+      
+    return a==b;
     }
 };
