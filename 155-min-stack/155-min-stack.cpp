@@ -1,72 +1,72 @@
 class MinStack {
     
-// private:
-//     stack<pair<int, int>> s;
-//     int curr_min = INT_MAX;
-    
-// public:
-//     MinStack() {}
-    
-//     void push(int val) {
-//         if (val < curr_min) {
-//             s.push({val, val});
-//             curr_min = val;
-//         }
-//         else s.push({val, curr_min});
-//     }
-    
-//     void pop() {
-//         s.pop();
-//         curr_min = s.empty() ? INT_MAX : s.top().second;
-//     }
-    
-//     int top() {
-//         return s.top().first;
-//     }
-    
-//     int getMin() {
-//         return curr_min;
-//     }
+private:
+    stack<pair<int, int>> s;
+    int curr_min = INT_MAX;
     
 public:
-    long mn;
-    stack<long> s;
+    MinStack() {}
     
-    MinStack() {
-    }
-    
-    void push(int val) {
-        if(s.empty())
-        {
-            mn=val;
-            s.push(val);
-        }
-        else if(val>mn)
-            s.push(val);
-        else
-        {
-            s.push((long)2*val-mn);
-            mn=val;
-        }  
+    void push(int val) 
+    {
+        if (val < curr_min)
+            curr_min = val;
+
+          s.push({val, curr_min});
     }
     
     void pop() {
-        if(s.top()<mn)
-            mn=2*mn-s.top();
-        
         s.pop();
+        curr_min = s.empty() ? INT_MAX : s.top().second;
     }
     
     int top() {
-        if(s.top()>=mn)
-        return s.top();
-        
-        return mn;
+        return s.top().first;
     }
     
     int getMin() {
-        return mn;
+        return curr_min;
     }
+    
+// public:
+//     long mn;
+//     stack<long> s;
+    
+//     MinStack() {
+//     }
+    
+//     void push(int val) {
+//         if(s.empty())
+//         {
+//             mn=val;
+//             s.push(val);
+//         }
+//         else if(val>mn)
+//             s.push(val);
+//         else
+//         {
+//             s.push((long)2*val-mn);
+//             mn=val;
+//         }  
+//     }
+    
+//     void pop() {
+//         if(s.top()<mn)
+//             mn=2*mn-s.top();
+        
+//         s.pop();
+//     }
+    
+//     int top() {
+//         if(s.top()>=mn)
+//         return s.top();
+        
+//         return mn;
+//     }
+    
+//     int getMin() {
+//         return mn;
+//     }
 
 };
 
