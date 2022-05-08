@@ -9,6 +9,7 @@ public:
     int low=0;
     int high=n;
     
+    //Cut1 & Cut2 are the first elements in right half
     while(low<=high)
     {
         int cut1 = (low + high)/2;
