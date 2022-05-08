@@ -16,7 +16,7 @@ public:
         return res;
     }
     
-    vector<int> mergeDecr(vector<int> vec1,vector<int> vec2) //Merge in Decr (NOT Exact Merge Procedure)
+    vector<int> mergeDecr(vector<int> vec1,vector<int> vec2) //Merge in Decr (NOT Merge Procedure)
     {
         
         vector<int> ans;
