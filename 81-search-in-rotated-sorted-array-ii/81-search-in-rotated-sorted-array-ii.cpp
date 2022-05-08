@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+ //Follow up In case all are equal with element not found then it will end up O(n) TC
+    
     bool search(vector<int>& nums, int X) 
     {
         int n = nums.size(), l = 0, r = n - 1;
@@ -12,7 +15,7 @@ public:
                 return true;
             
             else if(nums[l] == nums[m] && nums[r] == nums[m]) //Additional case for duplicates
-                l++, r--;
+                l++, r--;                                      
             
             else if(nums[l] <= nums[m])
             {
