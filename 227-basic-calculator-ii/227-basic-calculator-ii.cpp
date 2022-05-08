@@ -3,13 +3,15 @@ public:
 
     int calculate(string s) 
     {
-        s+="+";
+        s += "+";  //As acc to out logic last number will be left
         
+        int n = s.size();
         stack<int> stack;
+        
         int currNumber=0;
         char sign ='+';
         
-        for( int i = 0 ; i < s.length() ; i++ )
+        for(int i=0;i<n; i++)
         {
             if(s[i]==' ')
                 continue;
