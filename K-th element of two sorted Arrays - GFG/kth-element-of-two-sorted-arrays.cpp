@@ -59,6 +59,7 @@ class Solution{
     int low=max(0,k-m);
     int high=min(k,n);
     
+    //Cut1 and Cut2 are first element index in right half
     while(low<=high)
     {
         int cut1 = (low + high)/2;
