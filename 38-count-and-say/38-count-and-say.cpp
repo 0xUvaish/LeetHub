@@ -8,7 +8,8 @@ string countAndSay(int n)
         while(n--)
         {
             string currStr = "";
-            int k = prevStr.size(), i = 0;
+            int i = 0;
+            int k = prevStr.size();
             
             while(i < k)
             {
