@@ -32,9 +32,9 @@ public:
             int cnt=0;
             
             for(char it:a)
-                cnt+=(it!=c);
+                cnt += (it!=c);
             for(char it:b)
-                cnt+=(it!=c);
+                cnt += (it!=c);
             
             fans=min(fans,cnt);  
         }
