@@ -7,6 +7,7 @@ public:
             ans.push_back(res);
             return;
         }
+        
         int digit=digits[index]-'0';
         int len=mapping[digit].size();
         
@@ -19,7 +20,10 @@ public:
     {
         vector<char> mapping[]=
         {
-        {},{},{'a','b','c'},{ 'd', 'e', 'f' },
+        {},
+        {},
+        {'a','b','c'},
+        { 'd', 'e', 'f' },
         { 'g', 'h', 'i' },
         { 'j', 'k', 'l' },
         { 'm', 'n', 'o' },
@@ -28,14 +32,14 @@ public:
         { 'w', 'x', 'y', 'z'}
         };
         
-        string res;
+        string temp;
         vector<string> ans;
         
         int size=digits.size();
         if(size==0)
             return ans;
         
-        combo(digits,0,res,ans,mapping,size);
+        combo(digits,0,temp,ans,mapping,size);
         return ans;
     }
 };
