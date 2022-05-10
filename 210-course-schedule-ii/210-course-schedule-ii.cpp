@@ -7,13 +7,13 @@ public:
         for (auto &v : prerequisites)
         {
             indegree[v[0]]++;
-            graph[v[1]].emplace_back(v[0]);
+            graph[v[1]].push_back(v[0]);
         }
         
         vector<int> res;
         for (int i = 0; i < n; ++i)
             if (indegree[i] == 0)
-                res.emplace_back(i);
+                res.push_back(i);
 
         for (int i = 0; i < res.size(); ++i)
         {
@@ -22,7 +22,7 @@ public:
             {
                 indegree[adj]--;
                 if (indegree[adj] == 0) 
-                    res.emplace_back(adj);
+                    res.push_back(adj);
             }
         }
 
