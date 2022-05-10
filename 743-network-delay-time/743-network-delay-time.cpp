@@ -11,9 +11,9 @@ public:
                
         unordered_set<int>st;
         priority_queue<pair<int,int> , vector<pair<int,int> > , greater<pair<int,int> >> pq;
-        int dist[101]{0};
+        int dist[101];
         
-        for(int i=0;i<=100;++i)
+        for(int i=0;i<=n;++i)
             dist[i] = INT_MAX;
         
         
@@ -25,14 +25,14 @@ public:
             auto top = pq.top();
             st.insert(top.second);
             pq.pop();
+            
             for(auto it : adj[top.second])
             { 
-                // {vi,wi}
                 if(st.find(it.first) != st.end())
                     continue;
                 if(dist[it.first] > dist[top.second]+it.second)
                 {
-                    dist[it.first] = dist[top.second] + it.second ;
+                    dist[it.first] = dist[top.second] + it.second;
                     pq.push({dist[it.first],it.first});
                 }
             }
