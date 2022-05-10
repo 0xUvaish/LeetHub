@@ -4,7 +4,7 @@ public:
     {
         
         int answer = 0 , count = 0;
-        vector<pair<int,int>>adj[1000];
+        vector<pair<int,int>>adj[101];
         
         for(auto it : times)
             adj[it[0]].push_back({it[1],it[2]});
