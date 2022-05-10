@@ -18,7 +18,8 @@ public:
             return NULL;
         
         TreeNode* root = new TreeNode(postorder[index]);
-        int idx = dict[postorder[index--]];
+        int idx = dict[postorder[index]];
+        index--;
         root->right = buildTreeUtil(inorder, postorder, index, idx + 1, high);
         root->left = buildTreeUtil(inorder, postorder, index, low, idx - 1);
         
