@@ -3,17 +3,13 @@ class Solution {
 public:
     
     vector<vector<int>>res ;
-    void helper(vector<int>& candidates, int k,int n,vector<int>&ans,int ind)
+    void helper(vector<int>& candidates, int k,int target,vector<int>&ans,int ind)
     {
         int N = ans.size();
-
-        if(n<0)
+        if(N>k)
             return;
 
-        if( N > k )
-            return;
-
-        if( 0 == n && N == k )
+        if(target==0 && N == k)
         {
             res.push_back(ans);
             return;
@@ -21,16 +17,15 @@ public:
         
         for(int i=ind;i<candidates.size();i++)
         {
-            if( candidates[i] > n )
+            if(candidates[i]>target)                        //As next no. will also be greater
                 break;
 
             ans.push_back(candidates[i]);
-            helper(candidates,k,n-candidates[i],ans,i+1);
+            helper(candidates,k,target-candidates[i],ans,i+1);
             ans.pop_back();
 
         }
-        
-        return;
+
     }
     
     vector<vector<int>> combinationSum3(int k , int n) {
