@@ -1,21 +1,20 @@
 class Solution {
 public:
     
-bool dfs(int node, vector<vector<int>> &graph, vector<int> &col, int cur)
+bool dfs(int node, vector<vector<int>> &graph, vector<int> &col)
 {
-        if(col[node] != -1)
-        {
-            if(col[node] == cur) 
-                return true;
-            else
-                return false;
-        }
-        
-        col[node] = cur;
+        if(col[node] == -1)
+            col[node] = 1;
+    
         for(auto it: graph[node])
         {
-            bool f = dfs(it, graph, col, 1-cur);
-            if(!f) 
+            if(col[it]==-1)
+            {
+                col[it]=1-col[node];
+                if(!dfs(it, graph, col))
+                    return false;
+            }
+            else if(col[it]==col[node])
                 return false;
         }
         return true;
@@ -28,7 +27,7 @@ bool isBipartite(vector<vector<int>>& graph)
         
         for(int i=0;  i<n; i++)
             if(col[i] == -1)
-                if(!dfs(i, graph, col, 0))
+                if(!dfs(i, graph, col))
                     return false;
     
         return true;
