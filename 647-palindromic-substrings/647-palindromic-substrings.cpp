@@ -16,7 +16,7 @@ int countSubstrings(string s)
     {
 		ans += help(i, i, s);
 		if(i < n-1 && s[i] == s[i+1])
-			ans += help(i, i+1, s);
+		ans += help(i, i+1, s);
 	}
     
 	return ans;
