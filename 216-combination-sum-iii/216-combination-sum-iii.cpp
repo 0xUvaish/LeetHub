@@ -1,7 +1,5 @@
 class Solution {
-    
 public:
-    
     vector<vector<int>>res ;
     void helper(vector<int>& candidates, int k,int target,vector<int>&ans,int ind)
     {
@@ -17,7 +15,7 @@ public:
         
         for(int i=ind;i<candidates.size();i++)
         {
-            if(candidates[i]>target)                        //As next no. will also be greater
+            if(candidates[i]>target)                        //As next nos. will also be greater
                 break;
 
             ans.push_back(candidates[i]);
