@@ -19,7 +19,7 @@ public:
         if(!l || !r)
             return false;
         
-    return (l->val == r->val) and traverse(l->left, r->right) and traverse(l->right, r->left);
+    return (l->val == r->val) and traverse(l->left, r->right) && traverse(l->right, r->left);
     }
     
     
