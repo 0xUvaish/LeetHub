@@ -5,7 +5,7 @@ public:
     {  
          if(sr<0 || sc<0 || sc>=image[0].size() || sr>=image.size())
              return;
-         if((image[sr][sc] != oldColor) || (newColor == oldColor))
+         if((image[sr][sc] != oldColor))
              return;
       
          image[sr][sc] = newColor;
@@ -16,6 +16,9 @@ public:
     }
     
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
+        if(newColor==image[sr][sc])
+           return image;
+        
         floodFill(image, sr, sc, newColor, image[sr][sc]);       
         return image;
     }
