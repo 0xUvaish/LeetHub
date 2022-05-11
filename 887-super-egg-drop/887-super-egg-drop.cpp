@@ -16,10 +16,12 @@ int solve(int e,int f)
     while(start<=end)
     {
         int mid=start+(end-start)/2;
+        
         int eggBreak = solve(e-1,mid-1);
         int eggNotBreak = solve(e,f-mid);
+        
         int temp=1+max(eggBreak,eggNotBreak);  //Max because worst case
-        ans=min(ans,temp);                     //Nut minimise no. of steps
+        ans=min(ans,temp);                     //But minimise no. of steps
         
         if(eggBreak<eggNotBreak)
             start=mid+1;
