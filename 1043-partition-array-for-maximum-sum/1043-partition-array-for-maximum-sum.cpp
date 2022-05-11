@@ -12,11 +12,9 @@ public:
             for(int i=idx;i<arr.size()&&i<idx+k;i++)
             {
                 res=max(res,arr[i]);
-                if(i-idx+1<=k)
-                {
-                    dp[idx]=max(dp[idx],res*(i-idx+1)+maxsum(arr,i+1,dp,k));
-                }
+                dp[idx]=max(dp[idx],res*(i-idx+1)+maxsum(arr,i+1,dp,k));
             }
+        
             return dp[idx];
     }
     
