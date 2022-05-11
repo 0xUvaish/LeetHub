@@ -2,38 +2,30 @@ class Solution {
 public:
     string removeKdigits(string num, int k) {
         
-        stack<char>s;
+        string s="";
         for(int i=0;i<num.size();i++)
         {
-            while(s.size()>0 and s.top()>num[i] and k>0)
+            while(s.size()>0 and s.back()>num[i] and k>0)
             {
-                s.pop();
+                s.pop_back();
                 k--;
             }
             
-            s.push(num[i]);
+            s += num[i];
         }
         
         while(k>0) //If all are in increasing order, then remove from the end
         {
-            s.pop();
+            s.pop_back();
             k--;
         }
 
-        string ans=""; 
-        while(!s.empty())
-        {
-            ans += s.top(); 
-            s.pop();
-        }
-        reverse(ans.begin(),ans.end());
-        
          int i=0;
 		/* corner case : count the leading number of zeros*/
-        while(ans[i] == '0')
+        while(s[i] == '0')
             i++;
 		
-        return (ans.substr(i) == "")? "0": ans.substr(i);
+        return (s.substr(i) == "")? "0": s.substr(i);
         
     }
 };
