@@ -11,6 +11,9 @@ public:
 	// }
     
     //Method 2: 
+    //Call 1: Don't use * (i,j+2)
+    //Call 2: Use * (i+1,j)
+    //Call 3: No * present (i+1,j+1)
     
     bool dp(int i, int j, string s, string p, vector<vector<int>> &memo)
     {
@@ -20,18 +23,21 @@ public:
         bool ans;
         if(j==p.length())
             ans = (i == s.length());
+        
         else
         {
             bool match =  (i<s.length() && (p[j]==s[i] || p[j]=='.'));
             
-            if(j+1<p.length() && p[j+1]=='*')
+            if(j+1<p.length() && p[j+1]=='*') //* Present
                 ans = (dp(i, j+2, s, p, memo)|| (match && dp(i+1, j, s, p, memo)));
             else
-                ans = match && dp(i+1, j+1, s, p, memo);
+                ans = (match && dp(i+1, j+1, s, p, memo));  // * Not present
         }
+        
         memo[i][j] = ans?1:0;
         return ans;
     }
+    
     bool isMatch(string s, string p) 
     {
         vector<vector<int>> memo(s.length()+1, vector<int>(p.length()+1, -1));
