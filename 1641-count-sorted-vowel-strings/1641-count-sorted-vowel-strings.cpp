@@ -17,7 +17,7 @@ public:
 // int countVowelStrings(int n)
 // {
     
-//     int count=0;
+//  int count=0;
 // 	for(int i=0;i<5;i++)
 //         count+=vowels(i,n-1);
     
