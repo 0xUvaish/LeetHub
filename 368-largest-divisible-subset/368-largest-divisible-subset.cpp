@@ -28,7 +28,7 @@ public:
         int prev=-1;
         for(int i=n-1;i>=0;i--)
         {
-            if(dp[i]==max and (prev==-1 || prev%nums[i]==0))
+            if(dp[i]==max && (prev==-1 || prev%nums[i]==0))
             {
                 ans.push_back(nums[i]);
                 prev=nums[i];
