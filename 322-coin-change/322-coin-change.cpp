@@ -21,6 +21,6 @@ public:
                 
             }
         }
-        return (dp[amount][n] >= INT_MAX-1) ? -1 : dp[amount][n]; 
+        return (dp[amount][n] == INT_MAX-1) ? -1 : dp[amount][n]; 
     }
 };
