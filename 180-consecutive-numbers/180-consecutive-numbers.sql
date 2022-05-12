@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+#Self Join
 #Correlated Subquerries
 
 SELECT DISTINCT L1.num AS ConsecutiveNums 
