@@ -1,5 +1,6 @@
 # Write your MySQL query statement below
 #Self Join
+#Correlated Subqueries
 
 SELECT E1.name AS Employee 
 FROM Employee E1 JOIN Employee E2 
