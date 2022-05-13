@@ -1,5 +1,7 @@
 class Solution {
 public:
+    
+    //Method 2: Non DP Solution
     int maxProfit(vector<int>& prices) 
     {
         int profit1=0,profit2=0;
