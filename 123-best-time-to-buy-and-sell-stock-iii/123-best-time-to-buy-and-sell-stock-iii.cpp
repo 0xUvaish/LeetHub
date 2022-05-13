@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //Method 1: 1st Transaction from Left, 2nd from Right - Exact 2 Transactions Ques
+    //but take max(one transaction, two transactions) after finding separately
     
     //Method 2: Non DP Solution
     int maxProfit(vector<int>& prices) 
