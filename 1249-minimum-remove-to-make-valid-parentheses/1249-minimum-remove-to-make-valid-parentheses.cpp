@@ -16,6 +16,7 @@ public:
                     st.push({s[i],i});
             }
         }
+        
         while(!st.empty())
         {
             int a=st.top().second;
