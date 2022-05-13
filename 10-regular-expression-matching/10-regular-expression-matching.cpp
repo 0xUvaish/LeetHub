@@ -17,22 +17,21 @@ public:
     
     bool dp(int i, int j, string s, string p, vector<vector<int>> &memo)
     {
+        
+        if(j==p.length())
+            return (i == s.length());
+        
         if(memo[i][j]!=-1)
             return memo[i][j];
         
         bool ans;
-        if(j==p.length())
-            ans = (i == s.length());
-        
-        else
-        {
+
             bool match =  (i<s.length() && (p[j]==s[i] || p[j]=='.'));
             
             if(j+1<p.length() && p[j+1]=='*') //* Present
                 ans = (dp(i, j+2, s, p, memo)|| (match && dp(i+1, j, s, p, memo)));
             else
                 ans = (match && dp(i+1, j+1, s, p, memo));  // * Not present
-        }
         
         memo[i][j] = ans?1:0;
         return ans;
