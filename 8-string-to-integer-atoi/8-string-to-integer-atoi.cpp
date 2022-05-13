@@ -47,7 +47,7 @@ int myAtoi(string s)
         
         res= res*10 + int(s[i]- '0');
         
-        //clamping
+        //Range is given
         if(res*sign <= INT_MIN)
             return INT_MIN;
         else if(res*sign >= INT_MAX)
