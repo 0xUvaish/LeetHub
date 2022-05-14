@@ -6,16 +6,16 @@ public:
         
         priority_queue<pair<int, int>> pq;
         
-        for(int i=0; i<n; i++)
+        for(int j=0; j<n; j++)
         {
             
-            while((!pq.empty()) && points[i][0]-pq.top().second>k)
+            while((!pq.empty()) && points[j][0]-pq.top().second>k)
                 pq.pop();
                 
             if(!pq.empty())
-                ans = max(ans, (pq.top().first + points[i][0] + points[i][1]));
+                ans = max(ans, (pq.top().first + points[j][0] + points[j][1]));
             
-            pq.push({points[i][1] - points[i][0], points[i][0]});
+            pq.push({points[j][1] - points[j][0], points[j][0]});
         }
         
         return ans;
