@@ -1,5 +1,8 @@
 class Solution {
 public:
+    //Method 1: O(26*n) Calculate max freq ecery time without taking extra variable
+    
+    //Method 2: O(n) TC
     int characterReplacement(string s, int k) {
         
         int i=0;
