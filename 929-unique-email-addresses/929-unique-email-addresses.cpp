@@ -9,6 +9,7 @@ public:
             if(c=='@')
                 atflag=1;
             
+            //Left Half
             if(!atflag)
             {
                 
@@ -21,6 +22,7 @@ public:
                 
                 tmp += c;
             }
+            //Right Half
             else
                 tmp += c;
                 
