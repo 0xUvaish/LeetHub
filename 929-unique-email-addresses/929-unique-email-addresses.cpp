@@ -29,16 +29,13 @@ public:
     return tmp;
     }
     
-    int numUniqueEmails(vector<string>& emails) {
-        int ans=0;
+    int numUniqueEmails(vector<string>& emails) 
+    {
         unordered_map<string, int>mp;
+        
         for(auto x:emails)
             mp[help(x)]++;
         
         return mp.size();
-//         for(auto y:mp)
-//             if(y.second)
-//                 ans++;
-// return ans;
     }
 };
