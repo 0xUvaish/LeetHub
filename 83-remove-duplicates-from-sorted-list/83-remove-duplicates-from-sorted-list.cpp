@@ -26,6 +26,7 @@ public:
             while (next and curr -> val == next -> val)
                 next = next -> next;
             
+            //This below check is the only difference in I & II problem
             // if(curr -> next == next) //to check whether we found any duplicate or not
             // {
                 tmp -> next = curr;
