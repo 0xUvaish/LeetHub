@@ -19,10 +19,10 @@ public:
                if(pflag==1)
                     continue;
                 
-                tmp = tmp + c;
+                tmp += c;
             }
             else
-                tmp = tmp + c;
+                tmp += c;
                 
         }
     return tmp;
