@@ -19,7 +19,7 @@ public:
         ListNode *curr = head;
         ListNode *next = head;
         ListNode *dummy = new ListNode(0);
-        ListNode *last = dummy;
+        ListNode *tmp = dummy;
         
         while(curr) 
         {
@@ -29,13 +29,13 @@ public:
             
             if (curr -> next == next) //to check whether we found any duplicate or not
             {
-                last -> next = curr;
-                last = last -> next;
+                tmp -> next = curr;
+                tmp = tmp -> next;
             }
             curr = next;
         }
         
-        last -> next = NULL;        
-        return dummy -> next;
+    tmp -> next = NULL;        
+    return dummy -> next;
     }
 };
