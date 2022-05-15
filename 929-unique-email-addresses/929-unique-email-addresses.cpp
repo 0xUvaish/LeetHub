@@ -21,8 +21,7 @@ public:
                 
                 tmp = tmp + c;
             }
-            
-            if(atflag)
+            else
                 tmp = tmp + c;
                 
         }
