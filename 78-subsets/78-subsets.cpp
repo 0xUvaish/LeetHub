@@ -1,17 +1,9 @@
 class Solution {
 public:
-	vector<vector<int>> subsets(vector<int>& nums) {
-    
-		vector<vector<int>>powerSet;
-		vector<int>ArrayList;
-		generateSubsets(nums, 0, ArrayList, powerSet);
-		return powerSet;
-
-	}
-
 	void generateSubsets(vector<int>& nums, int currIndex, vector<int>&currSubset, vector<vector<int>>&powerSet)
-	{
-		if(currIndex >= nums.size()){
+	   {
+		if(currIndex >= nums.size())
+        {
 			powerSet.push_back(currSubset);
 			return;
 		}
@@ -23,7 +15,15 @@ public:
 		currSubset.pop_back();
         
 		generateSubsets(nums, currIndex+1, currSubset, powerSet);
+	}
+    
+	vector<vector<int>> subsets(vector<int>& nums) 
+    {
+    
+		vector<vector<int>>powerSet;
+		vector<int>ArrayList;
+		generateSubsets(nums, 0, ArrayList, powerSet);
+		return powerSet;
 
-		return;
 	}
 };
