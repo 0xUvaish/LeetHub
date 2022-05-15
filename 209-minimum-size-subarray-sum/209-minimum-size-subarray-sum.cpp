@@ -7,7 +7,8 @@ public:
         int sum = 0, mn = INT_MAX;
         int i = 0;
         
-        for(int j=0 ; j<nums.size() ; j++){
+        for(int j=0 ; j<nums.size() ; j++)
+        {
             sum += nums[j];
             
             if(sum >= k)
@@ -15,7 +16,8 @@ public:
                 while(sum >= k)
                 {
                     mn = min(mn, j-i+1);
-                    sum = sum - nums[i++];
+                    sum = sum - nums[i];
+                    i++;
                 }
             }
         }
