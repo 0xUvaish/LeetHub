@@ -68,11 +68,11 @@ bool isNumber(string s)
     if(i<n && isNumeric && (s[i]=='e' || s[i]=='E'))
     {
         i++;
-        isNumeric = false;
         
         if(i<n && (s[i]=='+' || s[i]=='-'))
             i++;
         
+        isNumeric = false;
         while(i<n && (s[i]>='0' && s[i]<='9'))
         {
             i++;
