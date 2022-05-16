@@ -39,8 +39,8 @@ public:
                     q.push({newx,newy});
                     dp[newx][newy]=1 + dp[tp.first][tp.second];
                        
-                    if(newx==n-1 and newy==n-1) 
-                        return dp[n-1][n-1];
+                    // if(newx==n-1 and newy==n-1) 
+                    //     return dp[n-1][n-1];
                    }
                 }
             }
