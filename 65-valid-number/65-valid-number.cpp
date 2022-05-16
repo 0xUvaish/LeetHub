@@ -8,10 +8,10 @@ bool isNumber(string s)
         {
             char curr = s[i];
             
-            if (isdigit(curr)) 
+            if(isdigit(curr)) 
                 dig = true;
             
-            else if (curr == '-' || curr == '+') 
+            else if(curr == '-' || curr == '+') 
             {
                 if (i != 0 && s[i - 1] != 'e' && s[i - 1] != 'E') 
                     return false;
@@ -19,7 +19,7 @@ bool isNumber(string s)
             
             else if (curr == 'e' || curr == 'E') 
             {
-                if (exp || !dig) 
+                if(exp || !dig) 
                     return false;
                 exp = true;
                 dig = false;
@@ -27,7 +27,7 @@ bool isNumber(string s)
             
             else if (curr == '.')
             {
-                if (dot || exp) 
+                if(dot || exp) 
                     return false;
                 dot = true;
             }
