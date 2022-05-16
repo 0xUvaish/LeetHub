@@ -51,7 +51,6 @@ bool isNumber(string s)
     bool isNumeric = false;
     while(i<n && (s[i]>='0' && s[i]<='9'))
     {
-        cout<<s[i]<<" ";
         i++;
         isNumeric = true;
     }
@@ -76,7 +75,6 @@ bool isNumber(string s)
         
         while(i<n && (s[i]>='0' && s[i]<='9'))
         {
-            cout<<s[i]<<" ";
             i++;
             isNumeric = true;
         }
@@ -86,7 +84,6 @@ bool isNumber(string s)
     while(i<n && s[i]==' ')
         i++;
     
-    cout<<i<<" ";
     return (isNumeric&& i==n);
     
  }
