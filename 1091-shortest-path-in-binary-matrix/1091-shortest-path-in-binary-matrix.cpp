@@ -4,6 +4,7 @@ public:
         
           int n=grid.size();
         
+            //dp is path matrix, also acting as visited
           vector<vector<int>> dp(n,vector<int> (n,0));
           dp=grid;
           int dx[8] = {-1, 0, 1, 0, -1, -1, 1, 1};
