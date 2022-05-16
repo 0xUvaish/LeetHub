@@ -32,16 +32,10 @@ public:
                 int newx=tp.first  + dx[i];
                 int newy=tp.second + dy[i];
 
-                if(newx>=0 and newy>=0 and newx<n and newy<n)
+                if(newx>=0 && newy>=0 && newx<n && newy<n && dp[newx][newy]==0)
                 {
-                   if(dp[newx][newy]==0)
-                   {
                     q.push({newx,newy});
                     dp[newx][newy]=1 + dp[tp.first][tp.second];
-                       
-                    // if(newx==n-1 and newy==n-1) 
-                    //     return dp[n-1][n-1];
-                   }
                 }
             }
     }
