@@ -13,7 +13,7 @@ public:
     TreeNode* getClonedTargetNode(TreeNode* root, TreeNode* target) 
     {
         if(!root) 
-            return 0;
+            return NULL;
         
         if(root->val == target->val) 
             return root;
@@ -26,7 +26,7 @@ public:
         if(right) 
             return right;
         
-        return 0;
+        return NULL;
     }
     
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
