@@ -14,7 +14,7 @@ public:
 
             if(ind==i)
             {
-                ind=max(reach,nums[i]+i);
+                ind=reach;
                 ans++;
             }
             
