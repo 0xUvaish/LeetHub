@@ -5,8 +5,8 @@ public:
         int n = arr.size();
         vector<bool> vis(n, false);
         queue<int> q;
-        q.push(start);
         
+        q.push(start);
         vis[start] = true;
         
         while(q.size())
