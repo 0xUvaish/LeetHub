@@ -15,10 +15,9 @@ public:
         {
             if(i+j < vals.size()) 
             {
-             total += vals[i+j];       
+             total += vals[i+j];   
+             dp[i] = max(dp[i], total - maxdiff(vals, i + j + 1));
             }
-            
-            dp[i] = max(dp[i], total - maxdiff(vals, i + j + 1));
         }
         return dp[i];
     }
