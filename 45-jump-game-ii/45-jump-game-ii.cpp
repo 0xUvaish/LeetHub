@@ -5,16 +5,16 @@ public:
         if(nums.size()==1)
             return 0;
         
-        int reach=nums[0],ind=nums[0];
+        int futureReach=nums[0],currReach=nums[0];
         int ans=1;
         
         for(int i=1;i<nums.size()-1;i++)
         {
-            reach=max(reach,nums[i]+i);
+            futureReach=max(futureReach,nums[i]+i);
 
-            if(ind==i)
+            if(currReach==i)
             {
-                ind=reach;
+                currReach=futureReach;
                 ans++;
             }
             
