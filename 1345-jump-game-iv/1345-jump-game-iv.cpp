@@ -29,9 +29,7 @@ public:
                     q.push({x.first - 1, x.second + 1});
                 
                 if (x.first + 1 < arr.size() && m.find(arr[x.first + 1]) != m.end())
-                {
                         q.push({x.first + 1, x.second + 1});
-                }
                 
                 if (m.find(arr[x.first]) != m.end())
                 {
