@@ -14,6 +14,7 @@ public:
                 q.push({it, 1});
         }
         m.erase(arr[0]);
+        
         while (!q.empty())
         {
 
@@ -29,7 +30,6 @@ public:
                 
                 if (x.first + 1 < arr.size() && m.find(arr[x.first + 1]) != m.end())
                 {
-                    if (x.first + 1)
                         q.push({x.first + 1, x.second + 1});
                 }
                 
