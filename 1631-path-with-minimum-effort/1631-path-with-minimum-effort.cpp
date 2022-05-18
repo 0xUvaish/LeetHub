@@ -16,7 +16,7 @@ public:
     
         while(!pq.empty())
         {
-            int curx=pq.top()[1];
+            int curx = pq.top()[1];
             int cury = pq.top()[2];
             int val = pq.top()[0];
          
