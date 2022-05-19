@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Solution 1: Top Down O(n^2) TC, O(n^2) SC
 //     int dp[102][102];
 //     bool solve(string &s1, string &s2, string &s3, int i, int j, int k){
         
@@ -29,6 +30,8 @@ public:
 //          return solve(s1, s2, s3, 0 , 0 , 0);
 //     }
     
+    
+// Method 2: Bottom Up: O(n) Space
     bool isInterleave(string s1, string s2, string s3) {
         int size1 = s1.size();
         int size2 = s2.size();
