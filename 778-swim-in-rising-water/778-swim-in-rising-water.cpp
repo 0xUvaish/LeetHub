@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Solution 1: BS on Answer using DFS
     int dir[4][2] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     bool dfs(int x, int y, vector<vector<int>> &heights, int diff, vector<vector<bool>> &vis)
     {
