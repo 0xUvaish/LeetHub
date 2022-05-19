@@ -1,50 +1,39 @@
 class Solution {
 public:
-    int minimumEffortPath(vector<vector<int>>& heights) {
-        int n=heights.size();
-        int m=heights[0].size();
-        int dx[]={1,0,0,-1};
-        int dy[]={0,1,-1,0};
+    bool dfs(int row, int col, int limit, int prev,
+             vector<vector<int>>& heights, vector<vector<bool>>& visited) 
+    {
+        if(row < 0 || row >= heights.size() || col < 0 || col >= heights[0].size()
+          || visited[row][col] || abs(heights[row][col] - prev) > limit)
+            return false;
         
-        vector<vector<int> > dist(n, vector<int>(m,1e9));
+        visited[row][col] = true;
+
+        if(row == heights.size()-1 && col == heights[0].size()-1)
+            return true;
         
-        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
-     
-        pq.push({0,0,0});
+        return dfs(row, col+1, limit, heights[row][col], heights, visited)
+            || dfs(row, col-1, limit, heights[row][col], heights, visited)
+            || dfs(row+1, col, limit, heights[row][col], heights, visited)
+            || dfs(row-1, col, limit, heights[row][col], heights, visited);
+    }
+
+    int minimumEffortPath(vector<vector<int>>& heights) 
+    {
+        const int M = heights.size(), N = heights[0].size();
         
-        vector<int> v;
-    
-        while(!pq.empty())
+        int upper = INT_MAX, lower = 0;
+        
+        while(lower < upper) 
         {
-            int curx = pq.top()[1];
-            int cury = pq.top()[2];
-            int val = pq.top()[0];
-         
-            pq.pop();
+            vector<vector<bool>> visited(M, vector<bool>(N, false));
             
-            if(val>dist[curx][cury])
-                continue;
-            
-            if(curx==n-1 && cury==m-1)
-                return val;
-            
-            for(int k=0;k<4;k++)
-            {
-                int nx=curx+dx[k];
-                int ny=cury+dy[k];
-                
-                if(nx<0 || ny<0 || nx>=n || ny>=m)
-                    continue;
-                
-                int newDist = max(val,abs(heights[curx][cury] - heights[nx][ny]));
-                
-                if(dist[nx][ny]>newDist)
-                {
-                    dist[nx][ny]=newDist;
-                    pq.push({dist[nx][ny],nx,ny});
-                }
-            }          
+            int mid = lower + (upper - lower) / 2;
+            if(dfs(0, 0, mid, heights[0][0], heights, visited))
+                upper = mid;
+            else
+                lower = mid + 1;
         }
-        return 0;
+        return upper;
     }
 };
