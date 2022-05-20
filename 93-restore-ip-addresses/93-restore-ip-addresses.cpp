@@ -9,21 +9,20 @@ class Solution
   {
       
     // If is 4th part
-    if (sol.size() == 4) 
+    if(sol.size() == 4) 
     {
       // If we use every character, we find a solution
-      if (begin == ip.length())
+      if(begin == ip.length())
         res.push_back(convertToString(sol));
       return;
     }
       
-    // If is not 4th part
     string str;
-    for (int i = 1; i <= 3 && begin + i <= ip.size(); i++) 
+    for (int i=1; i<=3 && begin+i <= ip.size(); i++) 
     {
       str = ip.substr(begin, i);
       // leading zero or > 255 are invalid
-      if ((str[0] == '0' && str.size() > 1) || stoi(str) > 255)
+      if((str[0] == '0' && str.size() > 1) || stoi(str) > 255)
         return;
 
       sol.push_back(str);
@@ -36,7 +35,7 @@ public:
   vector<string> restoreIpAddresses(string s) 
   {
     vector<string> res, sol;
-    if (s.length() > 12)
+    if(s.length() > 12)
       return res;
       
     restore(s, res, sol, 0);
