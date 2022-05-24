@@ -51,7 +51,7 @@ public:
                 tmp.clear();
                 
                 tmp.push_back(word);
-                curr += word.length() + 1;
+                curr = word.length() + 1;
             }
         }
         
