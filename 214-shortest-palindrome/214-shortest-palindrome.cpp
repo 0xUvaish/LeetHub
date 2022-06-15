@@ -39,8 +39,8 @@ public:
         int x = lps[n-1];  //LPS of given string 
         
         string y = s.substr(x);
-        reverse(y.begin() , y.end());
-        return y + s;
+        reverse(y.begin(), y.end());
+        return y+s;
         
         
     }
