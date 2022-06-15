@@ -17,23 +17,23 @@ public:
                 ps[r][c] = ps[r - 1][c] + ps[r][c - 1] - ps[r - 1][c - 1] + matrix[r - 1][c - 1];
         
         int res = 0;
-        unordered_map<int, int> prevSum;
+        unordered_map<int, int> map;
         
         for (int c1 = 0; c1 < cSize; c1++)
         {
             for (int c2 = c1; c2 < cSize; c2++) 
             {
                 
-                prevSum[0] = 1;
+                map[0] = 1;
                 for (int r = 0; r < rSize; r++) 
                 {
                     int currSum = get2dSum(ps, c1, c2, r);
-                    if(prevSum.count(currSum - target)) 
-                        res += prevSum[currSum -target];
+                    if(map.count(currSum - target)) 
+                        res += map[currSum -target];
                     
-                    prevSum[currSum]++;
+                    map[currSum]++;
                 }
-                prevSum.clear();
+                map.clear();
             }
         }
         return res;
