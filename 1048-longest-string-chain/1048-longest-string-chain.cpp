@@ -1,18 +1,25 @@
 class Solution {
 public:
 	bool checkPossible(string& s1,string& s2){
-		if(s1.size()!=s2.size()+1)return false;
+		if(s1.size()!=s2.size()+1)
+            return false;
+        
 		int f=0, s=0;
-		while(f<s1.size()){
-			if(s<s2.size() and s1[f]==s2[s]){
+		while(f<s1.size())
+        {
+			if(s<s2.size() and s1[f]==s2[s])
+            {
 				f++;
 				s++;
 			}
-			else{
+			else
+            {
 				f++;
 			}
 		}
-		if(f==s1.size() and s==s2.size())return true;
+        
+		if(f==s1.size() and s==s2.size())
+            return true;
 		return false;
 	}
 
