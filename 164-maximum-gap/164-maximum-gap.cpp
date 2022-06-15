@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Method 1: nlogn TC
 int maximumGap(vector<int>& nums) 
 {
         
@@ -15,4 +16,6 @@ int maximumGap(vector<int>& nums)
         return maxi;
         
     }
+    
+    //Method 2: n TC
 };
