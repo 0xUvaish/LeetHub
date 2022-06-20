@@ -11,10 +11,11 @@ private:
         bool flag = false;
         
         Trie *curr = root;
-        for (int i = w.size() - 1, c; i >= 0; i--) 
+        int c;
+        for(int i = w.size() - 1; i >= 0; i--) 
         {
             c = w[i] - 'a';
-            if (!curr->children[c]) 
+            if(!curr->children[c]) 
             {
                 flag = true;
                 curr->children[c] = new Trie();
@@ -27,7 +28,6 @@ private:
 public:
     int minimumLengthEncoding(vector<string>& words)
     {
-
         int len = 0;
 
         sort(begin(words), end(words), [](string a, string b){return b.size() < a.size();});
