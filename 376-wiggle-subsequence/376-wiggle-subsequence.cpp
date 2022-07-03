@@ -7,26 +7,25 @@ public:
             return 1;
         
         vector<int> v;
-        bool pos=false;
-        bool neg=false;
+        bool incr=false;
+        bool decr=false;
 
             for(int i=0;i<n-1;i++)
             {
-               if((neg==false and (nums[i+1]<nums[i])))
+               if((decr==false and (nums[i]>nums[i+1])))
                 {
                  v.push_back(nums[i]);
-                 pos=false;
-                 neg=true;
+                 incr=false;
+                 decr=true;
                 }
-              else if((pos==false and (nums[i+1]>nums[i])))
+              else if((incr==false and (nums[i]<nums[i+1])))
                {
                v.push_back(nums[i]);
-                neg=false;
-                pos=true;
+                decr=false;
+                incr=true;
               }
             }
-        
-          nums=v;
+
           return v.size()+1;
     }
 };
