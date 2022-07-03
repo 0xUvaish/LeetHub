@@ -5,7 +5,7 @@ public:
         for(auto x: arr)
           total += x;
         
-        int req_parts = 3; //Can be generalized
+        int req_parts = 3; //Can be generalized to N
         
         if(total%req_parts!=0)
             return false;
