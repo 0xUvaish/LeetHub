@@ -27,7 +27,7 @@ public:
         return ma;
     }
     
-    //M2: O(n) Sol - NOT LIS
+    //M2: O(n) Sol - NOT LIS /But Greedy
 //     int wiggleMaxLength(vector<int> nums)
 //     {
 //         int n=nums.size();
