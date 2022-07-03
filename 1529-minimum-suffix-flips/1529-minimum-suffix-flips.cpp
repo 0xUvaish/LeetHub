@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //Continuous groups of 0s and 1s
+    //Continuous groups of 0s and 1s starting with leftmost 1
 int minFlips(string target) {
 
     int check=0,count=0;
