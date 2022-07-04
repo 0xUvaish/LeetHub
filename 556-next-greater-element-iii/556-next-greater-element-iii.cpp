@@ -1,7 +1,8 @@
 class Solution {
 public:
     int nextGreaterElement(int n) {
-        int num_digits=log10(n);
+       
+       int num_digits=log10(n);
        long long ans=0;
         vector<int>digits(num_digits+1);
         int i=num_digits;
@@ -23,10 +24,12 @@ public:
             return -1;
         
         int temp=i-1;
+        
         //Now finding just greater element
         i=num_digits;
         while(digits[i]<=digits[temp])
-                --i;
+            --i;
+        
         swap(digits[i],digits[temp]);
         reverse(digits.begin()+temp+1,digits.end());
         
@@ -40,8 +43,6 @@ public:
         }
         if(ans>INT_MAX)
                 return -1;
-       
-        
         
         return ans; 
     }
