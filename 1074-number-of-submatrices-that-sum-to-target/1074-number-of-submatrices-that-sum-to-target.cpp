@@ -23,7 +23,7 @@ public:
         {
             for (int c2 = c1; c2 < cSize; c2++) 
             {
-                
+                //Hashing now
                 map[0] = 1;
                 for (int r = 0; r < rSize; r++) 
                 {
