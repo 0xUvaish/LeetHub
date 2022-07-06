@@ -16,7 +16,7 @@ public:
             return head;
         
         ListNode *curr = head;
-        ListNode *next = head;
+        ListNode *next;
         ListNode *dummy = new ListNode(0);
         ListNode *tmp = dummy;
         
