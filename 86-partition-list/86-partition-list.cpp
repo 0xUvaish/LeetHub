@@ -35,7 +35,7 @@ public:
         }
         
         if(t2->next)
-        temp2->next=NULL; 
+        temp2->next=NULL; //Draw diagram to understand it
         
         if(!t1->next)
         return t2->next;
