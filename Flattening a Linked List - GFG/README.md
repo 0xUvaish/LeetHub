@@ -54,7 +54,7 @@ You do not need to read input or print anything. Complete the function <strong>f
 
 <p>&nbsp;</p>
 
-<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N*M*M)<br>
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N*N*M)<br>
 <strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
 
 <p>&nbsp;</p>
