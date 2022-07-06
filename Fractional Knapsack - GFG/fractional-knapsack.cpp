@@ -22,7 +22,6 @@ class Solution
 {
     public:
     
-    
     static bool cmp(struct Item i1, struct Item i2)
     {
     double vw1 = (double) i1.value/i1.weight;
