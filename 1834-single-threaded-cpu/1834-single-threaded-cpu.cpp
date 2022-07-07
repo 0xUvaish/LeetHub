@@ -34,7 +34,6 @@ public:
             pq.pop();
             
             order.push_back(Job.second);
-            
             time += Job.first;  //Update time by adding current job's burst
             
         }
