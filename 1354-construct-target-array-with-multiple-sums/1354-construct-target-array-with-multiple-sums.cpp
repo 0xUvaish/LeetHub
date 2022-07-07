@@ -8,8 +8,8 @@ public:
         long long tsum = 0;
         for(auto it : target)
         {
-            tsum += it;
             pq.push(it);
+            tsum += it;
         }
         
         long long maxEle;
