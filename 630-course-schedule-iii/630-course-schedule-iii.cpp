@@ -22,6 +22,7 @@ public:
                 {
                     cnt-=pq.top();
                     pq.pop();
+                    
                     pq.push(x[0]);
                     cnt+=x[0];
                 }
