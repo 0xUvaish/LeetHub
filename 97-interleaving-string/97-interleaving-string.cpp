@@ -44,7 +44,8 @@ public:
         dp[0] = 1;
         for(int i = 0; i <= size1; i++){
             for(int j = 0; j <= size2; j++){
-                if(i == 0 && j == 0)continue;
+                if(i == 0 && j == 0)
+                    continue;
                 
                 else if(i == 0) 
                     dp[j] = dp[j - 1] && s2[j - 1] == s3[i + j - 1];
