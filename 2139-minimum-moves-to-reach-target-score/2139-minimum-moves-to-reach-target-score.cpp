@@ -20,6 +20,7 @@ public:
             }
             else
                 n = n - 1; 
+            
             count++;
             
             if(n == 1)
