@@ -17,6 +17,7 @@ public:
             }
         }
         
+        //Unbalanced will remain in stack
         while(!st.empty())
         {
             int a=st.top().second;
