@@ -48,8 +48,8 @@ int maximumGain(string s, int x, int y)
         reverse(s2.begin(), s2.end());
         for(int i=0;i<s2.length();i++) 
         {
-             if(stk.empty())
-                stk.push(s2[i]);
+          if(stk.empty())
+            stk.push(s2[i]);
           else
           {
               if(s2[i] == mn[1] && stk.top() == mn[0])
