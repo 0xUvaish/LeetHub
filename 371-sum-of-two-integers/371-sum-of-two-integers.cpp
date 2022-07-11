@@ -9,6 +9,7 @@ public:
         {
             carry=carry << 1;
             int prev_sum=sum;
+            
             sum=prev_sum^carry;
             carry=prev_sum & carry;
         }
