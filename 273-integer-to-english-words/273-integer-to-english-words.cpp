@@ -12,10 +12,10 @@ public:
     string twodigit(int n)
     {
         string ans="";
+        
         if(n<10)
-        {
             ans+=onedigit(n);
-        }
+        
         else if(n>19)
         {
             string word[]={"Twenty ","Thirty ","Forty ","Fifty ","Sixty ","Seventy ","Eighty ","Ninety "};
@@ -36,11 +36,10 @@ public:
         string ans="";
         
         int hundred=n/100;
-        n=n%100;
         if(hundred!=0)
             ans+=onedigit(hundred)+"Hundred ";
         
-        int tens=n;
+        int tens=n%100;
         if(tens!=0)
             ans+=twodigit(tens);
         
