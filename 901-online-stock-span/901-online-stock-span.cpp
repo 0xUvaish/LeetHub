@@ -10,22 +10,17 @@ public:
     {
         int count = 1;
         
-        if(s.empty()){
-            s.push({price,1});
-            return 1;
-        }
-        
-       else
-       {
-        while(!s.empty() && s.top().first <= price)
+        if(!s.empty())
         {
-            count +=s.top().second;
-            s.pop();
+            while(!s.empty() && s.top().first <= price)
+            {
+                count +=s.top().second;
+                s.pop();
+            }
         }
         
         s.push({price, count});
-        return count;
-       }    
+        return count;    
     }
 };
 
