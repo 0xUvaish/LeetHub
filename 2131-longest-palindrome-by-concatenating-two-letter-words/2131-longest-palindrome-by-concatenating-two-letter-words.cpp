@@ -14,7 +14,7 @@ public:
             string tmp = i.first;
             if(tmp[0] == tmp[1])
             {
-                if(!flag && i.second % 2)
+                if(!flag && i.second % 2==1)
                     flag = true;
 
                 int t = i.second / 2;
