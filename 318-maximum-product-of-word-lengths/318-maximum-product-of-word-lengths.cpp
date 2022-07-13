@@ -23,10 +23,7 @@ int maxProduct(vector<string>& word) {
             for(int k=0;k<26;k++)
             {
                 if(v[i][k]&v[j][k])
-                {
-                    
                     flag = true;
-                }
             }
             if(!flag)
             {
