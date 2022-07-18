@@ -37,7 +37,7 @@ public:
                         if(temp == endWord)
                             return ladder;   //answer
                         
-                        if(dict.count(temp))  //new word exist in wordList
+                        if(dict.count(temp))  //new word exists in wordList
                         {
                             q.push(temp);
                             dict.erase(temp);
