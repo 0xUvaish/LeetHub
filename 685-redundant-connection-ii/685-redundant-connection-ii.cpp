@@ -1,4 +1,5 @@
-class DSU{
+class DSU
+{
     public:
     vector<int>p;
     DSU(int n){
