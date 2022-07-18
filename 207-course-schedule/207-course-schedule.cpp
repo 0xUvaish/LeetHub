@@ -34,9 +34,6 @@ public:
             
         } 
         
-        if (studied != numCourses) {
-            return false;
-        }
-        return true;
+        return studied == numCourses;
     }
 };
