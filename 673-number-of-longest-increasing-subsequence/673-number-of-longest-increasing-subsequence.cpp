@@ -9,35 +9,34 @@ int findNumberOfLIS(vector<int>& nums)
     
     vector<int> lis(n,1);//longest increasing subsequence array
     vector<int> count(n,1);//stores count of longest increasing subsequence
+    int maxLis = 1;
     
     for(int i=1;i<n;i++)
     {
         for(int j=0;j<i;j++)
         {
             
-            if(nums[i]>nums[j] && lis[i]<lis[j]+1)
+            if(nums[j]<nums[i] && lis[i]<lis[j]+1)
             {
                 lis[i]=lis[j]+1;
-                count[i]=count[j];//count of j and i are equal
+                count[i]=count[j];//count of j will extend to i
             }
             
-            else if(lis[i]==lis[j]+1)
+            else if(nums[j]<nums[i] && lis[i]==lis[j]+1)
             {
                 count[i]+=count[j];
             }
+            maxLis = max(maxLis, lis[i]);
         }
     }
-    int maximum=INT_MIN;
-    for(int i=0;i<n;i++)//calculating maximum in lis array
-    {
-        maximum=max(maximum,lis[i]);
-    }
+    
     int result=0;
     for(int i=0;i<n;i++)
     {
-        if(maximum==lis[i])
+        if(maxLis==lis[i])
             result+=count[i];
     }
+    
     return result;
 }
     
