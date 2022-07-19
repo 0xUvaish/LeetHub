@@ -23,9 +23,8 @@ int findNumberOfLIS(vector<int>& nums)
             }
             
             else if(nums[j]<nums[i] && lis[i]==lis[j]+1)
-            {
                 count[i]+=count[j];
-            }
+            
             maxLis = max(maxLis, lis[i]);
         }
     }
