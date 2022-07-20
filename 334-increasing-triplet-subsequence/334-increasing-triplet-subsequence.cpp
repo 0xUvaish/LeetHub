@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //M1: a1, a2 two variables
     bool increasingTriplet(vector<int>& nums) {
         int n=nums.size();
         if(n<3) 
@@ -19,4 +20,7 @@ public:
         }
         return false;
     }
+    
+    //M2: Left Min, Right Max
+    
 };
