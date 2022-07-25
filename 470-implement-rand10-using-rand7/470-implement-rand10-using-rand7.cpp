@@ -15,12 +15,12 @@ public:
 //     }
     
     //Using rand7()
-    int tmp;
+    int tmp=0;
     int rand10()
     {
-        int k=rand7() + tmp;
+        int k = rand7() + tmp;
         if(k==10)
-            tmp = 0;
+            tmp=0;
         else 
         {
             k=k%10;
