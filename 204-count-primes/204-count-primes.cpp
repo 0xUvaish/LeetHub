@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Sieve of Erastothenes O(nlog(log(n)))
     int countPrimes(int n) 
     {
         bool arr[n+1];
