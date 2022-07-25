@@ -7,8 +7,9 @@ public:
         for (int i = 0; i < 31; i++)
         {
             int temp = n%2;
-            n = n>>1;
             ans += temp;
+            
+            n = n>>1;
             ans = ans<<1;
         }
         
