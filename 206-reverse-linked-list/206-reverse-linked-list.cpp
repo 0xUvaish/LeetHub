@@ -10,7 +10,8 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
+    ListNode* reverseList(ListNode* head) 
+    {
         ListNode *prev=NULL,*curr=head,*next=head;
         
         while(curr)
