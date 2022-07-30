@@ -22,14 +22,18 @@ public:
         for(int i=0;i<r;i++) 
           {
             
-             if(grid[i][0]==0) dfs(grid,i,0,r,c);
-             if(grid[i][c-1]==0) dfs(grid,i,c-1,r,c);
+             if(grid[i][0]==0) 
+                 dfs(grid,i,0,r,c);
+             if(grid[i][c-1]==0) 
+                 dfs(grid,i,c-1,r,c);
           }
         
         for(int j=0;j<c;j++)
           {
-              if(grid[0][j]==0) dfs(grid,0,j,r,c);
-              if(grid[r-1][j]==0) dfs(grid,r-1,j,r,c);
+              if(grid[0][j]==0) 
+                  dfs(grid,0,j,r,c);
+              if(grid[r-1][j]==0)
+                  dfs(grid,r-1,j,r,c);
           }
      
        int count=0;
