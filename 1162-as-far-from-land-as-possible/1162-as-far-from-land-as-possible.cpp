@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Multi Source BFS
     int maxDistance(vector<vector<int>>& grid) 
     {
         int mx = -1;
