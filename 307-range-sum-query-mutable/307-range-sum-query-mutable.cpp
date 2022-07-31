@@ -1,6 +1,6 @@
 class NumArray {
 public:
-    vector<int>v; //vector to store input vector.
+    vector<int>v;
     int sum; 
     NumArray(vector<int>& nums) 
     {
@@ -21,7 +21,7 @@ public:
     int sumRange(int left, int right) 
     {
         int res=sum; 
-        for(int i=0;i<left;i++)  //subtract all element before left and after right
+        for(int i=0;i<left;i++)
             res-=v[i];
         
         for(int i=right+1;i<v.size();i++)
