@@ -1,5 +1,6 @@
 class NumArray {
 public:
+    //M1: Brute Force
     vector<int>v;
     int sum; 
     NumArray(vector<int>& nums) 
