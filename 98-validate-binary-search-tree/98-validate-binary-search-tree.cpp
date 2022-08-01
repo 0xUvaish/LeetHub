@@ -13,7 +13,7 @@ class Solution {
 public:
     bool isBST(TreeNode* root ,long  min , long max)
     {
-           if (!root)
+           if(!root)
                return true;
         
             return (root->val > min && root->val < max&& isBST(root->left,min,root->val)&& isBST(root->right,root->val,max));
