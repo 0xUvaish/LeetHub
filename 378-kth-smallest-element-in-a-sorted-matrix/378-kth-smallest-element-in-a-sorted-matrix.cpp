@@ -2,7 +2,7 @@ class Solution {
 public:
     //M1: O(n^2) TC, O(k) SC using PQ
     
-    //M2: O(log(nlogn)) TC, O(1) SC
+    //M2: O(logINT_MAX*(nlogn)) TC, O(1) SC
     int kthSmallest(vector<vector<int>>& matrix, int k) {
         int n=matrix.size();
         int low=matrix[0][0];
