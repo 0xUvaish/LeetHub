@@ -8,7 +8,7 @@ public:
         n = abs(n);
         d = abs(d);
         
-        //Before Decimal
+        // (i) Before Decimal
         long long int tmp = n/d;
         string res = "";
         if(neg && n!=0)
@@ -19,19 +19,17 @@ public:
         if(n==0)
             return res;
         
-        //Decimal
+        //(ii) Decimal
         res += ".";
         
-        // After Decimal part
-        bool repeat = false;
+        // (iii) After Decimal part
         unordered_map<long long int, int> mp; // mapping from remainder to size of string
         while(n!=0)
         {
             if(mp.find(n)==mp.end())
                 mp[n] = res.size();
-            else if(mp.find(n)!=mp.end())
+            else if(mp.find(n)!=mp.end())     // repeatition found
             {
-                // repeatition found
                 res.push_back(')');
                 res.insert(mp[n],"(");
                 break;
