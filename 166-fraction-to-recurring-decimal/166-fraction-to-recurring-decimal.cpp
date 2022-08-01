@@ -25,14 +25,13 @@ public:
         // After Decimal part
         bool repeat = false;
         unordered_map<long long int, int> mp; // mapping from remainder to size of string
-        while(n!=0 && !repeat)
+        while(n!=0)
         {
             if(mp.find(n)==mp.end())
                 mp[n] = res.size();
             else if(mp.find(n)!=mp.end())
             {
                 // repeatition found
-                repeat = true;
                 res.push_back(')');
                 res.insert(mp[n],"(");
                 break;
