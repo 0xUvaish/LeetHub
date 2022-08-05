@@ -24,7 +24,7 @@ vector<int> findAnagrams(string s, string p)
                 count--;
         }
         
-        if(j-i+1==k) //we might get an ans
+        if(j-i+1==k) //window size hit
         {
             if(count==0)
                 ans.push_back(i);
@@ -37,6 +37,7 @@ vector<int> findAnagrams(string s, string p)
             }
             i++;
         }
+        
         j++;
         
     }
