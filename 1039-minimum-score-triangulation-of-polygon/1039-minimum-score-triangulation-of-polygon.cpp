@@ -2,6 +2,7 @@ class Solution {
 public:
 int t[101][101];
 
+//Exactly MCM Code from GFG
 int solve(vector<int>& arr, int i, int j)
 {
     if(i+1==j)
