@@ -27,7 +27,7 @@ public:
                 
                 ans=ans|| solve(s,j+1,val);
                 
-                if(ans)
+                if(ans)                     //No need to run unncessary if ans has arrived
                     break;
             }
         }
