@@ -15,7 +15,7 @@ public:
 
         
         int n=s1.size();
-        vector<int>f1(26),f2(26);
+        vector<int>f1(26),f2(26);    //freq match
         for(int i=0;i<n;i++)
         {
             f1[s1[i]-'a'] += 1;
