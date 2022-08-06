@@ -5,11 +5,12 @@ public:
     {
         if(i+1 == j)
             return 0;
+        
         if(dp[i][j] != -1)
             return dp[i][j];
         
         int res = 0; 
-        for(int k = i+1; k<=j-1; k++)
+        for(int k = i+1; k<j; k++)
         {
             int temp = solve(arr, i, k) + solve(arr, k, j) + arr[i]*arr[k]*arr[j];
             res = max(res, temp);
