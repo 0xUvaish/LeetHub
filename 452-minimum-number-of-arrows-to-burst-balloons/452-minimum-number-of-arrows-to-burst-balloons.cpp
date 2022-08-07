@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Similar to Meeting Room Type I (Sort end time + i pointer i jump)
     static bool compare(vector<int> &v1, vector<int> &v2)
     { 
         return v1[1] < v2[1]; 
