@@ -70,22 +70,22 @@ public:
             return (p[0] < q[0]);
         });
         
-        int count = 0, start_time = 0, end_time = 0;
+        int count = 0, start_time = 0, reach = 0;
         
         int i=0;
-        while (end_time < n) 
+        while (reach < n) 
         {
             while(i<intervals.size() && start_time >= intervals[i][0])
             {
-                end_time = max(end_time, intervals[i][1]);
+                reach = max(reach, intervals[i][1]);
                 i++;
             }
             
-            if (start_time == end_time)  //end time did not exceed start time 
+            if (start_time == reach)  //reach did not exceed start time 
                 return -1;
             
             count++;
-            start_time = end_time;
+            start_time = reach;
         }
         
         return count;
