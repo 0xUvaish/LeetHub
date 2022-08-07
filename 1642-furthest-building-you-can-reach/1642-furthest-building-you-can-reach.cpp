@@ -13,14 +13,7 @@ public:
                 //Total count of bricks needed
                 totalCount+=diff;
                 
-                if(ladders==0) 
-                {
-                    if(totalCount>bricks)
-                        return i;
-                    else
-                        continue;
-                }
-                else
+                if(ladders!=0) 
                 {
                     maxHeap.push(diff);
                 
@@ -29,7 +22,12 @@ public:
                         totalCount-=maxHeap.top();
                         maxHeap.pop();
                         ladders--;
-                    }                  
+                    } 
+                }
+                else
+                {
+                    if(totalCount>bricks)
+                        return i;                
                 }
             }
         }
