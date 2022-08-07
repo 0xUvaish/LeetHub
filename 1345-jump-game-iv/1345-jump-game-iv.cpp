@@ -3,7 +3,7 @@ public:
     int minJumps(vector<int> &arr)
     {
         queue<pair<int, int>> q;
-        map<int, vector<int>> m;
+        map<int, vector<int>> m;  //Will also act as visited
         for (int i = 0; i < arr.size(); i++)
             m[arr[i]].push_back(i);
 
@@ -14,6 +14,8 @@ public:
                 q.push({it, 1});
         }
         m.erase(arr[0]);
+        
+        
         
         while (!q.empty())
         {
