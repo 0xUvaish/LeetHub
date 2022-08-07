@@ -81,7 +81,7 @@ public:
                 i++;
             }
             
-            if (start_time == reach)  //reach did not exceed start time 
+            if(start_time == reach)  //reach did not exceed start time 
                 return -1;
             
             count++;
