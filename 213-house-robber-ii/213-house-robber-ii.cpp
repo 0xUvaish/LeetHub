@@ -8,7 +8,7 @@ public:
         if(n==1) 
             return nums[0];
         
-        dpstart.resize(n+1,0);
+        dpstart.resize(n,0);
         dpend.resize(n+1,0); 
         
         dpstart[0]=0;
