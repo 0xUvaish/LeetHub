@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Also Check M2 of LC1326
     //Exacly Same to Method 3 of LC 1326 Minimum No. of Taps to Open A Water Garden
     //Inner loop is of 'for' here.....1326 has 'while' loop
     
@@ -8,24 +9,24 @@ public:
               sort(clips.begin(), clips.end());
               int n = clips.size();
               
-              int start = 0, reach = 0, clips_req = 0;
+              int start_time = 0, reach = 0, count = 0;
         
               int i=0;
               while(reach < time)
               {
-                while(i<n && start >= clips[i][0]) 
+                while(i<n && start_time >= clips[i][0]) 
                 {
                     reach = max(reach, clips[i][1]);
                     i++;
                  }
                   
-                  if(start == reach) //Start can't exceed reach
+                  if(start_time == reach) //Start can't exceed reach
                       return -1;
                   
-                  clips_req++;
-                  start = reach;
+                  count++;
+                  start_time = reach;
               }
         
-         return clips_req;         
+         return count;         
     }
 };
