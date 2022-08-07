@@ -10,13 +10,14 @@ public:
               
               int start = 0, reach = 0, clips_req = 0;
         
+              int i=0;
               while(reach < time)
               {
-                  for(auto clip : clips)
-                  {
-                      if(start >= clip[0]) 
-                          reach = max(reach, clip[1]);
-                  }
+                while(i<n && start >= clips[i][0]) 
+                {
+                    reach = max(reach, clips[i][1]);
+                    i++;
+                 }
                   
                   if(start == reach) //Start can't exceed reach
                       return -1;
