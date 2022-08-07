@@ -21,12 +21,12 @@ int stoneGameVI(vector<int>& av, vector<int>& bv)
         turn = !turn;
     }
     
-    if(ali > bob) 
+    if(ali>bob) 
         return 1;
-    if(bob > ali) 
+    else if(bob>ali) 
         return -1;
-    
-    return 0;
+    else
+        return 0;
 }
     
 };
