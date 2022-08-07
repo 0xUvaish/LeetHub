@@ -33,6 +33,7 @@ public:
 //             }
 //         }
         
+    // Jump Game 2 now
 //         int maxIndex = 0;
 //         int jump = 0;
 //         int pos = 0;
