@@ -24,7 +24,7 @@ public:
             }
             
             if(ladders<0)
-                break;
+                return i;
         }
         return i;
     }
