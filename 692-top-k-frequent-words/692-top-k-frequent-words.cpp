@@ -1,3 +1,5 @@
+//Comparator of Vectors and Priority Queue works exactly opposite
+
 struct Compare 
 {
     bool operator()(pair<int, string> &str1, pair<int, string> &str2) 
