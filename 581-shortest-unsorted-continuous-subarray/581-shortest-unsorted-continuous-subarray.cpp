@@ -3,7 +3,7 @@ public:
 	int findUnsortedSubarray(vector<int>& A)
     {
 		int n=A.size();
-		int beg = -1, end = -2, miniRight = A[n-1], maxLeft = A[0];
+		int beg = 2, end = 1, miniRight = A[n-1], maxLeft = A[0];
         
 		for (int i=1;i<n;i++) 
         {
