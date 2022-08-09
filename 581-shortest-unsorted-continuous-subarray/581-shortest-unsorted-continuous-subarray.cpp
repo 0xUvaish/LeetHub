@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //end and beg initial values are just for edge case when there is nothing to sort
 	int findUnsortedSubarray(vector<int>& A)
     {
 		int n=A.size();
@@ -19,4 +20,5 @@ public:
         
 	return end - beg + 1;
 	}
+
 };
