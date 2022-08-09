@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> findDiagonalOrder(vector<vector<int>>& mat) 
     {
-        int m=mat.size(),n=mat[0].size();
+        int m=mat.size();
         vector<int>res;
         map<int,vector<int>>mp;
         
