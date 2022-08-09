@@ -72,9 +72,10 @@ public:
         if(!indegtwo)
             return detectCycle(edges,f);
         
-        if(detectCycle(edges,ans2)==f)
+        else if(detectCycle(edges,ans2)==f)
             return ans2;
         
-        return ans1;
+        else
+            return ans1;
     }
 };
