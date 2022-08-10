@@ -1,6 +1,7 @@
 class Solution {
 public:
     
+    //Traverse entire string and Just reach last index with isNumeric true
 bool isNumber(string s) 
  {
     int i=0, n = s.length();
