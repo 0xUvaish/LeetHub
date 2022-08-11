@@ -18,8 +18,8 @@ public:
         
       vector<vector<int>>ans;
         
-        if(root==NULL)
-            return ans;
+     if(root==NULL)
+        return ans;
         
       while(!q.empty())
       {
