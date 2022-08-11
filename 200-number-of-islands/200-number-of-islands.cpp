@@ -12,7 +12,6 @@ public:
     {
         if(!isSafe(i,j,m,n) || grid[i][j]!='1')
             return;
-        
 
         grid[i][j]='0';
         
