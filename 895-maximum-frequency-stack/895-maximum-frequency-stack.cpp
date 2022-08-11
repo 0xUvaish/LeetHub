@@ -15,11 +15,10 @@ public:
 
         freqMap[val]++;
         int freq = freqMap[val];
-
-        if(freq > maxfreq)
-            maxfreq = freq;
         
         setMap[freq].push(val);
+        
+        maxfreq = max(freq, maxfreq);
     }
     
     
