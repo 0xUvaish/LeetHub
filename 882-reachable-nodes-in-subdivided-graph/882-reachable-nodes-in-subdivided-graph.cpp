@@ -1,7 +1,3 @@
-
-#define REPP(i, n) for(int i = 1; i <= n; i++)
-#define ALL(obj) (obj).begin(), (obj).end()
-
 class Solution {
     
     vector<vector<pair<int, int>>> G;
