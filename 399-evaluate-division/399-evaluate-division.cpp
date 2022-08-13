@@ -1,47 +1,49 @@
 class Solution {
-    unordered_map<string, unordered_map<string, double>> edges; //  {start: {end1: weight, end2. weight } }
 public:
-    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values, vector<vector<string>>& queries) {
-        //equations[i]: (Ai, Bi)
-        //values[i]: Ai / Bi
-        //queries[i]: (Ci, Di)
-        vector<double> ans; ans.reserve(queries.size());
-        int m = equations.size(); //
-        for(int i = 0; i < m; i++){ //build up edges and weights
-            edges[equations[i][0]][equations[i][1]] = values[i]; 
-            edges[equations[i][1]][equations[i][0]] = 1 / values[i]; 
+    unordered_map<string, vector<pair<string, double>>> mp;
+    
+    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values, vector<vector<string>>& queries)
+    {
+        for(int i=0;i<equations.size();i++)
+        {
+            mp[equations[i][0]].push_back({equations[i][1], values[i]});
+            mp[equations[i][1]].push_back({equations[i][0], 1.0 / values[i]});
         }
-        unordered_set<string> visited;
-        for(int i = 0; i < queries.size(); i++){
-            if(edges.count(queries[i][0]) == 0 or edges.count(queries[i][1]) == 0){
-                ans.push_back(-1);
+        
+        vector<double> ans;
+        for(auto q: queries)
+        {
+            string p1 = q[0];
+            string p2 = q[1];
+            
+            if(mp.find(p1) == mp.end() && mp.find(p2) == mp.end())
+            {
+                ans.push_back(-1.00);
                 continue;
             }
-            visited.insert(queries[i][0]); 
-            ans.push_back(dfs(queries[i][0], queries[i][1], visited));
-            visited.clear();
+            
+            unordered_map<string, bool> vis;
+            ans.push_back(dfs(p1, p2, vis));
         }
         return ans;
     }
     
-    //assumption: only called in nodes not visited
-	//pos is where we are now. 
-    double dfs(const string &pos, const string &target, unordered_set<string> &visited){
-        if(pos == target)
-            return 1;
+    double dfs(string x, string y, unordered_map<string, bool> &vis)
+    {
+        if(x == y)
+            return 1.00;
         
-        visited.insert(pos);
+        vis[x] = true;
         
-        //check all edges
-        for(const auto &[nxt, w]: edges[pos])
+        for(int i=0;i<mp[x].size();i++)
         {
-            if(not visited.count(nxt))
+            if(!vis[mp[x][i].first])
             {
-                double res = dfs(nxt, target, visited);
-                if(res != -1.0)
-                    return res * w;
+                double ans = mp[x][i].second * dfs(mp[x][i].first, y, vis);
+                if(ans > 0.0)
+                    return ans;
             }
         }
-        return -1.0;
+        return -1.00;
     }
 };
