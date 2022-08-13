@@ -43,7 +43,7 @@ public:
 //         return t;
 //     }
     
-    //M2: Monotonic Stack NGL/NGR
+    //M2: Monotonic Stack NGL/NGR - O(n)
     // https://leetcode.com/problems/maximum-binary-tree/discuss/2108818/O(N)-solutions-by-using-Next-Greater-Element
     
     vector<int> nextGreater(vector<int> &nums, int n) 
