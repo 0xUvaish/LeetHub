@@ -33,12 +33,13 @@ public:
 			{
 				auto node = q.front();
 				q.pop();
+                
 				if(node->left) 
                     q.push(node->left);
 				if(node->right)
                     q.push(node->right);
 
-                //additional login in traditional bfs
+                //additional logic in traditional level order
 				if(i != size)                    
                     node->next = q.front();
 				else
