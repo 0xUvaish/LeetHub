@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Dijkstra's
     int networkDelayTime(vector<vector<int>>& times, int n, int k) 
     {
         
@@ -15,7 +16,6 @@ public:
         
         for(int i=0;i<=n;++i)
             dist[i] = INT_MAX;
-        
         
         dist[k] = 0;
         pq.push({0,k});
