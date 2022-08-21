@@ -26,7 +26,9 @@ public:
         for(int i = 0; i < m; i++)
             if(target[i + start] != '*' && target[i + start] != stamp[i]) 
                 return false;
+        
         ans.push_back(start);
+        
         for(int i = start; i - start < m; i++) 	
             stars += (target[i] != '*'), target[i] = '*';
 
