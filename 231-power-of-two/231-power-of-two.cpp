@@ -17,8 +17,14 @@ public:
     
 //Method 2 without using Loop
     
-    bool isPowerOfTwo(int n) 
+    // bool isPowerOfTwo(int n) 
+    // {
+    //     return (log2(n) - floor(log2(n)) == 0) ? true: false;
+    // }
+    
+//Method 3 1 set bit only
+    bool isPowerOfTwo(int n)
     {
-        return (log2(n) - floor(log2(n)) == 0) ? true: false;
+        return (n>0 && (n&(n-1))==0);
     }
 };
