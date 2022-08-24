@@ -10,15 +10,11 @@ public:
         {
             i=0;
             while(i<numRows && ind<n)
-            {
                 vec[i++] += s[ind++];
-            }
             
             i=numRows-2;
             while(i>=1 && ind<n)
-            {
                 vec[i--] += s[ind++];
-            }
         }
         
         string ans="";
