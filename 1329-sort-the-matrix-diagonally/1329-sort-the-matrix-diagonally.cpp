@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    //Sol 1: Insertion Sort O(n^3) Sol
+    //Sol 1: Bubble Sort O(n^3) Sol
 //     vector<vector<int>> diagonalSort(vector<vector<int>> &mat) {
 
 //     for(int t=1;t<mat.size();t++)
@@ -19,7 +19,7 @@ public:
 //     }
     
     
-    //Sol2: Priority Queue
+    //Sol2: Priority Queue O(n^2 logn)Sol
     void diagonalSorter(int i,int j,vector<vector<int>>&mat)
     {
         int m=mat.size(),n=mat[0].size();
