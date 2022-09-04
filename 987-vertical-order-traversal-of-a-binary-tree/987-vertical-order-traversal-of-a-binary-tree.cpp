@@ -43,12 +43,11 @@ public:
             vector<int>tempVertical;
             
             for(auto mp2:mp1.second)
-            {
                 tempVertical.insert(tempVertical.end(),mp2.second.begin(),mp2.second.end());
-            }
             
             ans.push_back(tempVertical);
         }
+        
         return ans;
     }
 };
