@@ -49,18 +49,21 @@ public:
         {
             Node* resnode = m[key];
             int res = resnode->val;
+            
             m.erase(key);
             deletenode(resnode);
             addnode(resnode);
             m[key] = head->next;
+            
             return res; 
         }
         else
             return -1;
     }
-    
+
     void put(int key, int value) 
     {
+        
         if(m.find(key) != m.end())
         {
             Node* existInNode = m[key];
