@@ -52,8 +52,7 @@ public:
                 j=lps[j-1];
             else
             {
-                lps[i]=0;
-                i++;
+                lps[i++]=0;
             }
             
         }
