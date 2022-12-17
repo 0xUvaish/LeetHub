@@ -74,12 +74,11 @@ public:
         while(i<n && j<m)
         {
             if(haystack[i]==needle[j])
-            {
-                j++;
-                i++;
-            }
+                i++,j++;
+            
             else if(j!=0)
                 j=lps[j-1];
+            
             else
                 i++;
         } 
