@@ -45,15 +45,13 @@ public:
         while(i<n)
         {
             if(s[i]==s[j])
-            {
                 lps[i++]=++j;
-            }
+            
             else if(j!=0)
                 j=lps[j-1];
+            
             else
-            {
                 lps[i++]=0;
-            }
             
         }
         
