@@ -3,7 +3,7 @@ public:
     
     void findperm(vector<int>& nums,int idx, vector<vector<int>> &ans)
     {
-        if(idx==nums.size()-1)
+        if(idx==nums.size())
         {
             ans.push_back(nums);
             return;
