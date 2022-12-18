@@ -31,6 +31,6 @@ public:
             mp[inorder[i]]=i;
         
         int index=0;
-        return helper(preorder,inorder,0,inorder.size()-1,index,mp);
+        return helper(preorder, inorder, 0, inorder.size()-1, index, mp);
     }
 };
