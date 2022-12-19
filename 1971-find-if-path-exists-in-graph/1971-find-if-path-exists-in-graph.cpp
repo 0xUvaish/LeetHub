@@ -1,6 +1,5 @@
 class Solution {
 public:
-    int ans=-1;
     bool dfs(int node,vector<int> adj[],vector<int>& vis,int destination)
     {
         if(node==destination)
@@ -26,8 +25,7 @@ public:
         }
     
         vector<int> vis(n,0);
-        return dfs(source,adj,vis,destination);
-
-        return ans==1;   
+    
+        return dfs(source,adj,vis,destination); 
     }
 };
