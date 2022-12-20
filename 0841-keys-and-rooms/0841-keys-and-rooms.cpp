@@ -28,6 +28,9 @@ public:
             {
                 cmp+=1;
                 dfs(adj,vis,i);
+                
+                if(cmp>1)
+                    break;
             }
         }
         
