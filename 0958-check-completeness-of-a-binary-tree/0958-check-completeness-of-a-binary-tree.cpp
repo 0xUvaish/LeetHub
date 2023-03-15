@@ -29,8 +29,9 @@ public:
                 if(x->left!=NULL)
                 {
                     if(f)
-                    return 0;
-                 q.push(x->left);
+                        return 0;
+                    
+                    q.push(x->left);
                 }
                 else 
                     f=1;
@@ -39,6 +40,7 @@ public:
                 {
                     if(f)
                         return 0;
+                    
                     q.push(x->right);
                 }
                 else f=1;
