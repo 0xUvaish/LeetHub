@@ -34,7 +34,7 @@ public:
             curr=curr->next;
         }
         
-        if(temp2->next)
+        if(t2->next)
         temp2->next=NULL; //Draw diagram to understand it - Detach extra links
         
         if(!t1->next)
