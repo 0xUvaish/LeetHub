@@ -2,7 +2,7 @@ class Solution {
 public:
     int strangePrinter(string s) {
     int n = s.size();
-    vector<vector<int>> dp(n, vector<int>(n));
+    vector<vector<int>> dp(n, vector<int>(n, 0));
     for (int i = n - 1; i >= 0; --i) {
         
         dp[i][i] = 1;
