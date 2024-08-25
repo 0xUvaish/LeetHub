@@ -45,7 +45,7 @@ public:
                 count++;
             }
             
-            head->next = reverseKGroup(curr, k);
+            head->next = reverseKGroup(next, k);
             
             return prev;
         }
