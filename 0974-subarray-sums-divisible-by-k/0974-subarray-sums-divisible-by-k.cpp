@@ -8,12 +8,9 @@ public:
         for(int i=0; i<n; i++)
         {
             prefix_sum += nums[i];
-            int rem = prefix_sum%k;
+            int rem = (prefix_sum%k + k)%k;  // when rem<0 add k
             
-            if(rem<0)
-                rem += k;
-            
-            if (m.find(rem-0)!=m.end())
+            if(m.find(rem-0)!=m.end())
                 ans += m[rem]; 
             
             m[rem]++;
