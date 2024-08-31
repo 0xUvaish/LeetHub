@@ -23,7 +23,7 @@ public:
                 csum=prefix[j]-prefix[i-1];
                 val=csum*(j-i+1);
             }
-            ans+=(j-i+1);
+            ans+=(j-i+1);         //Count subarrays line
             j++;
         }
         return ans;
