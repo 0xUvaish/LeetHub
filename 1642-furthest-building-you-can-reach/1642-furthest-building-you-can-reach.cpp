@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //First use bricks then ladders
+    //Use ladders for larger heights
     int furthestBuilding(vector<int>& heights, int bricks, int ladders) 
     {
         priority_queue<int> maxBricks;
