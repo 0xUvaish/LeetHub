@@ -11,7 +11,7 @@ public:
         int n = target;
         int count = 0;
         
-        while(maxDoubles > 0 && n >= 1)
+        while(maxDoubles > 0 && n > 1)
         {
             if(n % 2 == 0)
             {
@@ -23,11 +23,11 @@ public:
             
             count++;
             
-            if(n == 1)
-                return count;
         }
         
-        if(n > 1) 
+        if(n == 1)
+            return count;
+        else if(n > 1) 
             count+= n - 1;
         
         return count;
