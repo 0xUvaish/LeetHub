@@ -1,6 +1,8 @@
 class Solution {
 public:
     long long dp[(int)1e5];
+    
+    //Binary Search is for optimization only
     int nextPosition(vector<vector<int>>& rides, int val, int idx){
         int l = idx;
         int h = rides.size() - 1;
