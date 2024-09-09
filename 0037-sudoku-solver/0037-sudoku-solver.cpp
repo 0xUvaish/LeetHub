@@ -7,9 +7,7 @@ public:
         
         for(int i=0;i<9;i++)
         {
-            if(board[i][col]==digit)
-                return false;
-            if(board[row][i]==digit)
+            if(board[i][col]==digit || board[row][i]==digit)
                 return false;
         }
             
