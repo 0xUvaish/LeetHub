@@ -1,5 +1,8 @@
 class CustomStack {
 public:
+    
+    
+    // https://leetcode.com/problems/design-a-stack-with-increment-operation/discuss/2386914/c%2B%2B-oror-USING-LAZY-ARRAY-oror-O(1)-for-each-querry
     vector<int> arr;
     vector<int> lazy;
     int sze;
