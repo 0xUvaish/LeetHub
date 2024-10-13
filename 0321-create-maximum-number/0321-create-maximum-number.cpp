@@ -47,7 +47,7 @@ public:
         int n = nums1.size();
         int m = nums2.size();
         
-        //Partitioning like Kth elements from sorted array
+        //Partitioning like Kth elements from sorted array - Great Base Approach for many problems
    
         for(int i=max(0,k-m);i<=min(k,n);i++)
             ans = max(ans,mergeDecr(maxElement(nums1,i),maxElement(nums2,k-i)));
