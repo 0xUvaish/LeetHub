@@ -8,7 +8,7 @@ public:
         
         for(int i=0;i<n;i++)
         {
-            while(!res.empty() && res.back()<vec[i] && n-i+res.size()>k)
+            while(!res.empty() && res.back()<vec[i] && (res.size()+n-i)>k)
                 res.pop_back();
             
             if(res.size()<k)
