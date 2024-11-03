@@ -26,6 +26,7 @@ public:
 ////Approach 1 -->         
         int upper = INT_MAX, lower = 0;
         int ans=INT_MAX;
+        //int ans=0; (Also working)
         
         while(lower <= upper) 
         {
