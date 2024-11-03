@@ -16,11 +16,8 @@ public:
     
     int maximumCandies(vector<int>& candies, long long k) {
         
-        ll sum=0;
-        for(auto x:candies)
-            sum+=x;
-        
-        ll low=0,high=sum,ans=0;
+        ll low=0, ans=0;
+        ll high=*max_element(candies.begin(),candies.end());;
         
         while(low<=high)
         {
