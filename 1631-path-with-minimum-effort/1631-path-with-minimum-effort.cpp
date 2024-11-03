@@ -23,17 +23,21 @@ public:
         const int M = heights.size(), N = heights[0].size();
         
         int upper = INT_MAX, lower = 0;
+        int ans=0;
         
-        while(lower < upper) 
+        while(lower <= upper) 
         {
             vector<vector<bool>> visited(M, vector<bool>(N, false));
             
             int mid = lower + (upper - lower) / 2;
             if(dfs(0, 0, mid, heights[0][0], heights, visited))
-                upper = mid;
+            {
+                ans = mid;
+                upper = mid-1;
+            }
             else
                 lower = mid + 1;
         }
-        return upper;
+        return ans;
     }
 };
