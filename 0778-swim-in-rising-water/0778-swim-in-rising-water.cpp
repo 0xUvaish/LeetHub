@@ -21,18 +21,18 @@ public:
     int swimInWater(vector<vector<int>> &heights)
     {
             int left = 0, right = 2500, ans = 0, mid;
-            while (left < right)
+            while (left <= right)
             {
                 mid = left + (right - left) / 2;
                 vector<vector<bool>> vis(heights.size(), vector<bool>(heights[0].size(), false));
 				if (dfs(0, 0, heights, mid, vis))
                 {
                     ans = mid;
-                    right = mid;
+                    right = mid - 1;
                 }
                 else
                     left = mid + 1;
             }
-            return right;
+            return ans;
     }
 };
