@@ -21,7 +21,9 @@ public:
     int minimumEffortPath(vector<vector<int>>& heights) 
     {
         const int M = heights.size(), N = heights[0].size();
+
         
+////Approach 1 -->         
         int upper = INT_MAX, lower = 0;
         int ans=0;
         
@@ -39,5 +41,27 @@ public:
                 lower = mid + 1;
         }
         return ans;
+        
+//Approach 2 -->  
+        
+//         int upper = INT_MAX, lower = 0;
+        
+//         while(lower < upper) 
+//         {
+//             vector<vector<bool>> visited(M, vector<bool>(N, false));
+            
+//             int mid = lower + (upper - lower) / 2;
+//             if(dfs(0, 0, mid, heights[0][0], heights, visited))
+//                 upper = mid;
+//             else
+//                 lower = mid + 1;
+//         }
+//         return upper;
+        
+        
+        
+        
+        
+        
     }
 };
