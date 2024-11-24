@@ -24,7 +24,7 @@ public:
     string ans="";
     while(!st.empty())
     {
-      ans.append(st.top().second, st.top().first); 
+      ans.append(st.top().second, st.top().first);  //{a,2} --> add 'a' -> 2 times
       st.pop();
     }
      
