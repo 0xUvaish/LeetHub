@@ -1,5 +1,6 @@
 class LRUCache {
 public:
+    //Class inside class
     class Node{
         public:
            int key;
@@ -13,11 +14,10 @@ public:
         }
     };
     
-    Node* head = new Node(-1,-1);
-    Node* tail = new Node(-1,-1);
-    
+    Node* head = new Node(-1,-1);  //Head for adding new nodes
+    Node* tail = new Node(-1,-1);  //Tail for deleting LR used node
+    int cap;    
     unordered_map<int, Node*> m;
-    int cap;
     
     LRUCache(int capacity) 
     {
@@ -25,6 +25,7 @@ public:
         head->next = tail;
         tail->prev = head;
     }
+    
     
     void addnode(Node* newNode)
     {
@@ -50,9 +51,10 @@ public:
             Node* resnode = m[key];
             int res = resnode->val;
             
-            m.erase(key);
+            m.erase(key);             //Remove old entries
             deletenode(resnode);
-            addnode(resnode);
+            
+            addnode(resnode);         //Add new entries
             m[key] = head->next;
             
             return res; 
