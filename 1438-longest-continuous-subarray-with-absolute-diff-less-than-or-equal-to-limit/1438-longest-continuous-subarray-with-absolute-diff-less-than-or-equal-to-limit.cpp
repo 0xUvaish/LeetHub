@@ -20,6 +20,8 @@ public:
             
             minn.push_back(j);
             
+            
+            
             while(abs(n[maxx.front()]-n[minn.front()]) > l)
             {
                 if(maxx.front()==i)
