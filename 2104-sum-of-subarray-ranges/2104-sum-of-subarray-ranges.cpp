@@ -12,7 +12,9 @@ public:
             if(!st.empty()){minPrev[i]=st.top();}
             st.push(i);
         }
+        
         while(!st.empty()){st.pop();}
+        
         for(int i=n-1;i>=0;i--)
         {
             while(!st.empty()&&nums[st.top()]>nums[i]){st.pop();}
@@ -26,7 +28,9 @@ public:
             if(!st.empty()){maxPrev[i]=st.top();}
             st.push(i);
          }
+        
          while(!st.empty()){st.pop();}
+        
          for(int i=n-1;i>=0;i--)
          {
             while(!st.empty()&&nums[st.top()]<nums[i]){st.pop();}
@@ -38,7 +42,8 @@ public:
         {
             long long leftMin=i-minPrev[i],rightMin=minNext[i]-i;
             long long leftMax=i-maxPrev[i],rightMax=maxNext[i]-i;
-            sum+=(leftMax*rightMax-leftMin*rightMin)*nums[i];
+            
+            sum += (leftMax*rightMax-leftMin*rightMin)*nums[i];
             
         }
         return sum;
