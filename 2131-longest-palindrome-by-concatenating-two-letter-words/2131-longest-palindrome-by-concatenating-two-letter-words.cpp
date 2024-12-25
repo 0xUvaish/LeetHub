@@ -3,7 +3,7 @@ public:
     int longestPalindrome(vector<string>& words) 
     {
         int ans = 0;
-        bool flag = false;
+        bool odd_twins = false;
         unordered_map<string, int> m;
 
         for(auto i : words)
@@ -14,11 +14,12 @@ public:
             string tmp = i.first;
             if(tmp[0] == tmp[1])
             {
-                if(!flag && i.second % 2==1)
-                    flag = true;
-
-                int t = i.second / 2;
+                int t = i.second / 2;   //Twins with even freq to be added(ll,ll or cc,cc,cc,cc or pp,pp from pp,pp,pp, i.e., extracting even frequencies)
                 ans += t * 4;
+                
+                
+                if(!odd_twins && i.second % 2==1)   //To handle one odd twin
+                    odd_twins = true;
             }
             else
             {
@@ -29,6 +30,6 @@ public:
             }
         }
 
-        return ans + (flag ? 2 : 0);
+        return ans + (odd_twins ? 2 : 0);
     }
 };
