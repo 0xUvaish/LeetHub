@@ -8,7 +8,7 @@ static bool compare(int a, int b)
 
 string largestNumber(vector<int>& nums) 
 {
-    sort(nums.begin(),nums.end(), compare);
+    sort(nums.begin(), nums.end(), compare);
     
     string s="";
     for(auto &n : nums) 
