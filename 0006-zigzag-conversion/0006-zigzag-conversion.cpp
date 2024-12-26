@@ -2,7 +2,7 @@ class Solution {
 public:
     string convert(string s, int numRows) {
         
-        vector<string> vec(numRows);
+        vector<string> vec(numRows, "");
         
         int ind = 0;
         int n = s.size();
