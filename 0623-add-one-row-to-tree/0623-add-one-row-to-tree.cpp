@@ -24,9 +24,10 @@ TreeNode* treeHelper(TreeNode* root, int k, int v, int d, TreeNode*prev)
     
         if(k==d)
         {
-            cout<<"a";
+            
             if(prev==NULL)
             {
+                cout<<"v";
                 TreeNode*node=new TreeNode(v,root,0);
                 return node;
             }
